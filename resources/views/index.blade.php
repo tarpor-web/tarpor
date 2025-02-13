@@ -89,7 +89,7 @@
 
 </head>
 <body class="bg-gray-100 text-gray-900">
-<div class="container-fluid mx-auto mt-0">
+<div class="w-full max-w-none mt-0">
     <header class="text-center">
         <!-- Top Menu (Desktop Only) -->
         <nav class="hidden lg:block bg-gray-950 text-white">
@@ -162,7 +162,7 @@
         <nav class="bg-gray-950 text-white sticky top-0 py-0 z-10">
             <div class="container mx-auto px-4 flex justify-between items-center">
                 <!-- Hamburger Menu (Mobile Only) -->
-                <div class="lg:hidden w-1/6 flex items-center">
+                <div class="lg:hidden w-1/6 pt-2 flex items-center">
                     <button class="text-white" id="open-mobile-menu" aria-label="Open menu">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
@@ -174,7 +174,7 @@
                     <ul id="mobile-menu-list" class="mt-8 space-y-2"></ul>
                 </div>
                 <!-- Logo -->
-                <div class="w-1/3 lg:w-3/12 flex justify-start">
+                <div class="w-1/3 lg:w-3/12  pt-2 md:pt-0 flex justify-start">
                     <a href="https://www.tarpor.com">
                         <img src="{{ asset('/logos/logo.svg') }}" alt="TARPOR" class="w-24 h-auto">
                     </a>
@@ -196,9 +196,9 @@
                 </div>
 
                 <!-- Cart, Wishlist, and User Account (Mobile and Desktop) -->
-                <div class="w-1/3 lg:w-3/12 flex items-center justify-end space-x-2 py-4 lg:space-x-5 lg:py-4">
+                <div class="w-1/3 lg:w-3/12 flex items-center justify-end space-x-2 lg:space-x-5 pt-4">
                     <!-- Search Button (Mobile Only) -->
-                    <div class="relative group">
+                    <div class="relative group -mt-2 md:mt-0">
                         <button class="lg:hidden text-white cursor-pointer" id="toggle-search" aria-label="Search mobile button">
                             <i class="fas fa-search"></i>
                         </button>
@@ -208,18 +208,18 @@
                     </div>
 
                     <!-- Wishlist Button -->
-                    <div class="relative group">
+                    <div class="relative group -mt-2 md:mt-0">
                         <a href="/wishlist" class="text-white hover:text-lime-500 relative">
                             <i class="fas fa-heart"></i>
                             <span class="absolute -top-4 -right-4 bg-red-500 text-white text-xs rounded-full px-2 py-1">0</span>
                         </a>
                         <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-black bg-lime-500 rounded opacity-0 group-hover:opacity-100 transition-opacity">
                                 Wishlist
-                            </span>
+                        </span>
                     </div>
 
                     <!-- Compare Button -->
-                    <div class="relative group">
+                    <div class="relative group -mt-2 md:mt-0">
                         <button class="text-white hover:text-lime-500 cursor-pointer relative" aria-label="Compare">
                             <i class="fas fa-exchange-alt"></i>
                             <span class="absolute -top-4 -right-4 bg-red-500 text-white text-xs rounded-full px-2 py-1">0</span>
@@ -230,7 +230,7 @@
                     </div>
 
                     <!-- Cart Button -->
-                    <div class="relative group">
+                    <div class="relative group -mt-2 md:mt-0">
                         <button class="text-white hover:text-lime-500 cursor-pointer relative" aria-label="Cart">
                             <i class="fas fa-cart-arrow-down"></i>
                             <span class="absolute -top-4 -right-4 bg-red-500 text-white text-xs rounded-full px-2 py-1">0</span>
@@ -357,7 +357,7 @@
                     </li>
                     <li class="relative group">
                         <a href="#" class="lg:font-bold text-sm lg:text-md hover:text-lime-300">Laptop</a>
-                        <ul class="dropdown absolute left-0 mt-2 w-48 lg:max-h-48 bg-gray-100 text-left text-gray-900 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-y-auto">
+                        <ul class="dropdown absolute left-0 mt-2 w-48 lg:max-h-48 bg-gray-100 text-left text-gray-900 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-y-auto z-50">
                             <li><a href="#" class="block lg:px-4 lg:py-2 hover:bg-gray-300">Acer</a></li>
                             <li><a href="#" class="block lg:px-4 lg:py-2 hover:bg-gray-300">Apple</a></li>
                             <li><a href="#" class="block lg:px-4 lg:py-2 hover:bg-gray-300">Asus</a></li>
@@ -366,7 +366,7 @@
                     </li>
                     <li class="relative group">
                         <a href="#" class="lg:font-bold text-sm lg:text-md hover:text-lime-300">Desktop & Server</a>
-                        <ul class="dropdown absolute left-0 mt-2 w-48 lg:max-h-48 bg-gray-100 text-left text-gray-900 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-y-auto">
+                        <ul class="dropdown absolute left-0 mt-2 w-48 lg:max-h-48 bg-gray-100 text-left text-gray-900 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-y-auto z-50">
                             <li><a href="#" class="block lg:px-4 lg:py-2 hover:bg-gray-300">All Desktop</a></li>
                             <li><a href="#" class="block lg:px-4 lg:py-2 hover:bg-gray-300">Gaming PC</a></li>
                         </ul>
@@ -379,6 +379,97 @@
         </nav>
 
     </header>
+
+    <section class="mt-2 lg:mt-3">
+        <div class="container mx-auto px-2 md:px-4 lg:h-[500px] rounded-lg"> <!-- Increased height to 520px -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 lg:h-full max-h-max gap-1"> <!-- Reduced gap to gap-1 -->
+                <!-- Main Slider (Left Side) -->
+                <div class="lg:col-span-8 col-span-12 h-full">
+                    <div id="carousel" class="relative overflow-hidden rounded-lg h-full">
+                        <!-- Slide Container -->
+                        <div id="slide-container" class="flex transition-transform duration-500 ease-in-out h-full">
+                            <!-- Slide 1 -->
+                            <div class="slide min-w-full h-full" data-slideindex="0">
+                                <a href="/dji-flip-drone-with-dji-rc-2-remote">
+                                    <img
+                                        src="{{ asset('uploads/slides/slide-1.webp') }}"
+                                        alt="DJI Flip Drone"
+                                        class="w-full h-full object-cover rounded-lg"
+                                    />
+                                </a>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="slide min-w-full h-full" data-slideindex="1">
+                                <a href="/offers/falgun-fest">
+                                    <img
+                                        src="{{ asset('uploads/slides/slide-2.webp') }}"
+                                        alt="Falgun Fest"
+                                        class="w-full h-full object-cover rounded-lg"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Slide Indicators -->
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            <div class="slide-indicator w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer"></div>
+                            <div class="slide-indicator w-3 h-3 bg-white rounded-full opacity-100 cursor-pointer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Ads (Desktop) -->
+                <div class="lg:col-span-4 col-span-12 hidden lg:block h-full">
+                    <div class="flex flex-col h-full gap-1"> <!-- Reduced gap to gap-1 -->
+                        <div class="flex-1 overflow-hidden rounded-lg">
+                            <a href="/store/logitech">
+                                <img
+                                    src="{{ asset('uploads/ads/ad-1.webp') }}"
+                                    alt="Logitech Surprise Discount"
+                                    class="w-full h-full object-cover rounded-lg"
+                                />
+                            </a>
+                        </div>
+                        <div class="flex-1 overflow-hidden rounded-lg">
+                            <a href="/hohem-mic-01-2tx-plus-1rx-microphone">
+                                <img
+                                    src="{{ asset('uploads/ads/ad-2.webp') }}"
+                                    alt="Hohem MIC-01 (2TX + 1RX)"
+                                    class="w-full h-full object-cover rounded-lg"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Ads (Mobile) -->
+                <div class="col-span-12 lg:hidden flex">
+                    <div class="w-1/2 p-[0.8px]">
+                        <a href="/store/logitech" class="block">
+                            <img
+                                src="{{ asset('uploads/ads/ad-1.webp') }}"
+                                alt="Logitech Surprise Discount"
+                                class="w-full h-auto rounded-lg block"
+                            />
+                        </a>
+                    </div>
+
+                    <div class="w-1/2 p-[0.8px]">
+                        <a href="/hohem-mic-01-2tx-plus-1rx-microphone" class="block">
+                            <img
+                                src="{{ asset('uploads/ads/ad-2.webp') }}"
+                                alt="Hohem MIC-01 (2TX + 1RX)"
+                                class="w-full h-auto rounded-lg block"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
 
     <section class="bg-white shadow-md rounded-lg p-6 mt-8">
         <h2 class="text-2xl font-semibold mb-4">Section Title</h2>

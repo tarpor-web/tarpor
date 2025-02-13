@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Lenovo IdeaPad D330",
             link: "product-1",
-            imageUrl: "{{ asset('/storage/products/thumbnail/product-1.webp') }}",
+            imageUrl: "{{ asset('uploads/products/thumbnail/product-1.webp') }}",
             description: "10.1 Inch HD IPS Touch Display Mineral Grey Laptop",
             price: "BDT 27,500",
             discount: "Save Tk 1,200"
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "HP Pavilion 14",
             link: "product-2",
-            imageUrl: "{{ asset('/storage/products/thumbnail/product-2.webp') }}",
+            imageUrl: "{{ asset('uploads/products/thumbnail/product-2.webp') }}",
             description: "Intel Core i5, 8GB RAM, 512GB SSD",
             price: "BDT 48,000",
             discount: "Save Tk 2,000"
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Samsung Galaxy S21",
             link: "product-3",
-            imageUrl: "{{ asset('/storage/products/thumbnail/product-3.webp') }}",
+            imageUrl: "{{ asset('uploads/products/thumbnail/product-3.webp') }}",
             description: "6.2 Inch Dynamic AMOLED, 128GB Storage",
             price: "BDT 85,000",
             discount: "Save Tk 5,000"
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Logitech Wireless Mouse",
             link: "product-4",
-            imageUrl: "{{ asset('/storage/products/thumbnail/product-4.webp') }}",
+            imageUrl: "{{ asset('uploads/products/thumbnail/product-4.webp') }}",
             description: "Wireless Optical Mouse, Ergonomic Design",
             price: "BDT 1,500",
             discount: "Save Tk 200"
@@ -158,10 +158,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Modify each menu item
     mobileMenuList.querySelectorAll("li").forEach((menuItem) => {
-        // Apply styles to list items
+        // Apply styles to list items Main Menu List
+        // menuItem.className="";
         menuItem.classList.add(
             "border-b",
-            "border-gray-50",
+            "border-gray-700",
             "pb-2",
             "flex",
             "justify-between",
@@ -173,38 +174,41 @@ document.addEventListener("DOMContentLoaded", function () {
         // Target child <li> elements inside dropdowns
         const childLis = menuItem.querySelectorAll(".dropdown li");
         childLis.forEach((childLi) => {
+            // This is whet i see on DIV > LI
             childLi.classList.add(
                 "py-1",
-                "border-b-[0.5px]",
-                "border-gray-500"
+                "px-4",
+                "border-b-[1px]",
+                "border-lime-500",
+                "bg-lime-200",
             );
         });
 
         let dropdown = menuItem.querySelector(".dropdown");
         if (dropdown) {
             // Remove desktop-only styles
-            dropdown.classList.remove(
-                "absolute",
-                "left-0",
-                "mt-4",
-                "opacity-0",
-                "invisible",
-                "group-hover:opacity-100",
-                "group-hover:visible"
-            );
-
-            // Style dropdown for mobile and ensure it appears below li
+            // dropdown.classList.remove(
+            //     "absolute",
+            //     "left-0",
+            //     "mt-4",
+            //     "opacity-0",
+            //     "invisible",
+            //     "group-hover:opacity-100",
+            //     "group-hover:visible"
+            // );
+            dropdown.className = "";
+            // Style dropdown for mobile and ensure it appears below li which is DIV > UL
             dropdown.classList.add(
                 "hidden",
                 "w-full",
-                "bg-gray-800",
-                "mt-1",
-                "rounded",
-                "px-2",
-                "border",
-                "border-dark",
-                "max-h-48",
-                "overflow-y-auto"
+                // "bg-gray-800",
+                // "mt-1",
+                // "rounded",
+                // "px-2",
+                // "border",
+                // "border-dark",
+                // "max-h-48",
+                // "overflow-y-auto"
             );
 
             // Create a toggle button inside the <li>
@@ -228,22 +232,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 dropdown.classList.toggle("hidden");
                 toggleBtn.textContent = dropdown.classList.contains("hidden") ? "+" : "−";
 
-                // Apply custom TailwindCSS classes to the dropdown when it's visible
+                // Apply custom TailwindCSS classes to the dropdown when it's visible DIV > UL
                 if (!dropdown.classList.contains("hidden")) {
+                    dropdown.className = "";
                     dropdown.classList.add(
                         "transition-all",
                         "duration-300",
-                        "ease-in-out"
+                        "ease-in-out",
                     );
                     dropdown.classList.remove(
                         "flex",
                         "justify-between",
-                        "pb-2",
-                        "bg-gray-800",
-                        "text-white",
-                        "cursor-pointer"
+                        "bg-gray-50",
+                        "item-center",
+                        "relative",
                     );
-                    dropdown.classList.add("border");
+                    // dropdown.classList.add(
+                    //     "w-full",
+                    //     "bg-sky-300",
+                    //     "border-b",
+                    //     "border-lime-500",
+                    //     "px-2",
+                    //     "max-h-48",
+                    //     "overflow-y-auto"
+                    // );
                 }
             });
         }
@@ -258,4 +270,34 @@ document.addEventListener("DOMContentLoaded", function () {
     closeMenuBtn.addEventListener("click", function () {
         mobileMenu.classList.add("-translate-x-full");
     });
+
+    // Slider Option displaying slider on homepage
+        const slideContainer = document.getElementById("slide-container");
+        const slides = document.querySelectorAll(".slide");
+        const indicators = document.querySelectorAll(".slide-indicator");
+        let currentIndex = 0;
+
+        // Function to update the slide position
+        function updateSlide() {
+            slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle("opacity-100", index === currentIndex);
+                indicator.classList.toggle("opacity-50", index !== currentIndex);
+            });
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide();
+        }, 5000);
+
+        // Indicator click functionality
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener("click", () => {
+                currentIndex = index;
+                updateSlide();
+            });
+        });
+
 });
