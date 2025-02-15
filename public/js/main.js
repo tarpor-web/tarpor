@@ -120,12 +120,15 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileSearchDropdown.classList.add("hidden");
         }
     });
-
+    
     // Toggle Mobile Search Visibility
     document.getElementById('toggle-search').addEventListener('click', function () {
         const searchBox = document.getElementById('mobile-search-box');
         searchBox.classList.toggle('hidden');
     });
+
+
+
 
     // Cart Sidebar
     const cartSidebar = document.getElementById('cart-sidebar');
@@ -140,11 +143,17 @@ document.addEventListener("DOMContentLoaded", function () {
         cartSidebar.classList.add('translate-x-full');
     });
 
+
+
+
     // Toggle User Dropdown
     document.getElementById('user-menu-button').addEventListener('click', function () {
         const dropdown = document.getElementById('user-dropdown');
         dropdown.classList.toggle('hidden');
     });
+
+
+
 
     // Mobile Menu Functionality
     const mobileMenu = document.getElementById("mobile-menu");
@@ -272,32 +281,70 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Slider Option displaying slider on homepage
-        const slideContainer = document.getElementById("slide-container");
-        const slides = document.querySelectorAll(".slide");
-        const indicators = document.querySelectorAll(".slide-indicator");
-        let currentIndex = 0;
+    const slideContainer = document.getElementById("slide-container");
+    const slides = document.querySelectorAll(".slide");
+    const indicators = document.querySelectorAll(".slide-indicator");
+    const prevButton = document.getElementById("prev-button");
+    const nextButton = document.getElementById("next-button");
+    let currentIndex = 0;
 
-        // Function to update the slide position
-        function updateSlide() {
-            slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle("opacity-100", index === currentIndex);
-                indicator.classList.toggle("opacity-50", index !== currentIndex);
-            });
-        }
-
-        // Auto-slide functionality
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlide();
-        }, 5000);
-
-        // Indicator click functionality
+    // Function to update the slide position
+    function updateSlide() {
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
         indicators.forEach((indicator, index) => {
-            indicator.addEventListener("click", () => {
-                currentIndex = index;
-                updateSlide();
-            });
+            indicator.classList.toggle("opacity-100", index === currentIndex);
+            indicator.classList.toggle("opacity-50", index !== currentIndex);
         });
+    }
+
+    // Previous Button Click
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide();
+    });
+
+    // Next Button Click
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide();
+    });
+
+    // Auto-slide functionality
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide();
+    }, 5000);
+
+    // Indicator Click Functionality
+    indicators.forEach((indicator) => {
+        indicator.addEventListener("click", () => {
+            const slideIndex = parseInt(indicator.getAttribute("data-slideindex"));
+            currentIndex = slideIndex;
+            updateSlide();
+        });
+    });
+
+
+
+    // To show Tooltips
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            const tooltip = button.querySelector('.tooltip-text');
+            const buttonRect = button.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            if (buttonRect.right + tooltipRect.width > window.innerWidth) {
+                tooltip.classList.remove('left-full', 'ml-2');
+                tooltip.classList.add('right-full', 'mr-2');
+                tooltip.querySelector('span').classList.remove('-left-2', 'border-r-4');
+                tooltip.querySelector('span').classList.add('-right-2', 'border-l-4');
+            } else {
+                tooltip.classList.remove('right-full', 'mr-2');
+                tooltip.classList.add('left-full', 'ml-2');
+                tooltip.querySelector('span').classList.remove('-right-2', 'border-l-4');
+                tooltip.querySelector('span').classList.add('-left-2', 'border-r-4');
+            }
+        });
+    });
 
 });
