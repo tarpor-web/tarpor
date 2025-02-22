@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileSearchDropdown.classList.add("hidden");
         }
     });
-    
+
     // Toggle Mobile Search Visibility
     document.getElementById('toggle-search').addEventListener('click', function () {
         const searchBox = document.getElementById('mobile-search-box');
@@ -345,6 +345,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 tooltip.querySelector('span').classList.add('-left-2', 'border-r-4');
             }
         });
+    });
+
+
+    // Scrolling to the top funciton
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Show the button and adjust opacity based on scroll position
+    window.addEventListener("scroll", () => {
+        const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        // Calculate opacity based on how much you've scrolled
+        const opacity = Math.min(scrollPosition / maxScroll, 1); // Max opacity is 1 when fully scrolled
+        scrollToTopButton.style.opacity = opacity;
+
+        // Show the button when scrolled down enough
+        if (scrollPosition > 100) {
+            scrollToTopButton.classList.remove("hidden");
+        } else {
+            scrollToTopButton.classList.add("hidden");
+        }
+    });
+
+    // Scroll to top when the button is clicked
+    scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
 });

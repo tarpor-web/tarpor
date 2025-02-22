@@ -88,10 +88,13 @@
     <!-- End Google Tag Manager -->
 
 </head>
-<body class="bg-gray-100 text-gray-900">
-<div class="w-full max-w-none mt-0">
+<body class="bg-gray-100">
+    <div id="scrollToTop" class="scroll-container fixed bottom-10 lg:bottom-6 right-2 lg:right-6 z-50 hidden bg-gray-800 p-2 rounded-lg shadow-lg transition-all duration-300 cursor-pointer opacity-0 hover:bg-gray-700 hover:shadow-2xl">
+        <i class="fa-solid fa-angles-up text-white text-2xl"></i>
+    </div>
 
-    <header class="text-center">
+
+{{--    <header class="relative text-center">--}}
         <!-- Top Menu (Desktop Only) -->
         <nav class="hidden lg:block bg-gray-950 text-white">
             <div class="container mx-auto px-4 pt-2">
@@ -160,7 +163,7 @@
         </nav>
 
         <!-- Middle Menu -->
-        <nav class="bg-gray-950 text-white sticky top-0 py-0 z-10">
+        <nav class="bg-gray-950 text-white sticky top-0 py-0 z-50">
             <div class="container mx-auto px-4 flex justify-between items-center">
                 <!-- Hamburger Menu (Mobile Only) -->
                 <div class="lg:hidden w-1/6 pt-2 flex items-center">
@@ -377,12 +380,11 @@
                 </ul>
             </div>
         </nav>
-    </header>
+{{--    </header>--}}
 
-    <section class="mt-2 lg:mt-3">
+    <section class="sliders-ads mt-2 lg:mt-3">
         <div class="container mx-auto px-2 md:px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-1 max-h-[500px]"> <!-- Constrain height -->
-
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-1"> <!-- Constrain height -->
                 <!-- Main Slider (Left Side) -->
                 <div class="lg:col-span-8 col-span-12 h-full">
                     <div id="carousel" class="relative overflow-hidden rounded-lg h-full">
@@ -478,8 +480,8 @@
             </div>
         </div>
     </section>
-    <section class="mt-2">
-        <div class="hidden sm:block bg-gray-100 pt-6 pb-0">
+    <section class="features mt-2">
+        <div class="hidden sm:block bg-gray-100 pt-2 pb-0">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
                     <!-- 0% EMI -->
@@ -519,7 +521,7 @@
         </div>
         <!-- Mobile-Only Section -->
         <div class="lg:hidden mt-2">
-            <div class="bg-gray-100 py-6">
+            <div class="bg-gray-100 py-2 lg:py-6">
                 <div class="container mx-auto px-2">
                     <div class="grid grid-cols-2 gap-2">
                         <!-- Support -->
@@ -595,32 +597,37 @@
         </div>
 
     </section>
-    <section>
+    <section class="categories">
         <!-- Header Section -->
-        <div class="container mx-auto px-4 mb-2 lg:mb-6">
+        <div class="container mx-auto px-4 py-2 mb-2 lg:mb-6">
             <div class="row">
-                <div class="col-lg-12 ps-0 ps-lg-2">
-                    <div class="flex justify-between items-center border-b-2 border-gray-200 pb-0">
-                        <!-- "Top Categories" with slanted & glowing effect -->
+                <div class="col-lg-12 px-0 lg:px-2">
+                    <div class="flex justify-between items-center border-b border-gray-300 pb-0">
+
+                        <!-- "Top Categories" with a premium color scheme -->
                         <div class="relative flex items-center group">
-                            <h6 class="relative text-sm sm:text-md text-white font-bold px-3 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-purple-600 to-indigo-600
-                       transform skew-x-[-12deg] rounded-lg shadow-lg transition-all duration-300
-                       hover:from-purple-700 hover:to-indigo-700 hover:shadow-purple-500/50">
-                                <span class="inline-block transform skew-x-[12deg]">🔥 Top Categories</span>
+                            <h6 class="relative text-xs md:text-base text-white font-semibold px-4 py-1 lg:py-2
+                    bg-gradient-to-r from-[#2c3e50] to-[#34495e] transform skew-x-[-6deg]
+                    rounded-lg shadow-md transition-all duration-300
+                    hover:from-[#273746] hover:to-[#2c3e50] hover:shadow-gray-500/50">
+                                <span class="inline-block transform skew-x-[6deg]">Top Categories</span>
                             </h6>
                         </div>
 
-                        <!-- "See all categories" link with hover underline effect -->
+                        <!-- "See all categories" link with a gold hover effect -->
+                        <!-- "See all categories" link with a professional blue hover effect -->
                         <a href="/categories"
-                           class="relative text-sm sm:text-md text-blue-600 hover:text-blue-800 transition-all duration-300 font-semibold after:content-['']
-                    after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all
-                    after:duration-300 hover:after:w-full">
+                           class="relative text-xs md:text-base text-[#2C3E50] font-medium transition-all duration-300
+                               hover:text-[#1A5276] after:content-[''] after:absolute after:left-0 after:bottom-0
+                                   after:h-[2px] after:w-0 after:bg-[#2C3E50] after:transition-all after:duration-300
+                                   hover:after:w-full">
                             See all categories →
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- Products List -->
         <div class="container mx-auto px-2 lg:px-4">
@@ -747,497 +754,2385 @@
             </ul>
         </div>
     </section>
-    <section>
+    <section class="products">
         <!-- Header Section -->
-        <div class="container mx-auto px-4 mb-2 lg:mb-6">
+        <div class="container mx-auto px-4 py-2 mb-0 lg:mb-4">
             <div class="row">
-                <div class="col-lg-12 ps-0 ps-lg-2">
-                    <div class="flex justify-between items-center border-b-2 border-gray-200 pb-0">
-                        <!-- "Top Categories" with slanted & glowing effect -->
+                <div class="col-lg-12 px-0 lg:px-2">
+                    <div class="flex justify-between items-center border-b border-gray-300 pb-0">
+
+                        <!-- "Collections" with a premium color scheme -->
                         <div class="relative flex items-center group">
-                            <h6 class="relative text-sm sm:text-md text-white font-bold px-3 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-purple-600 to-indigo-600
-                       transform skew-x-[-12deg] rounded-lg shadow-lg transition-all duration-300
-                       hover:from-purple-700 hover:to-indigo-700 hover:shadow-purple-500/50">
-                                <span class="inline-block transform skew-x-[12deg]">Collections</span>
+                            <h6 class="relative text-xs md:text-base text-white font-semibold px-4 py-1 lg:py-2
+                    bg-gradient-to-r from-[#2c3e50] to-[#34495e] transform skew-x-[-6deg]
+                    rounded-lg shadow-md transition-all duration-300
+                    hover:from-[#273746] hover:to-[#2c3e50] hover:shadow-gray-500/50">
+                                <span class="inline-block transform skew-x-[6deg]">Collections</span>
                             </h6>
                         </div>
 
-                        <!-- "See all products" link with hover underline effect -->
+                        <!-- "See all products" link with a gold hover effect -->
                         <a href="/products"
-                           class="relative text-sm sm:text-md text-blue-600 hover:text-blue-800 transition-all duration-300 font-semibold after:content-['']
-                    after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all
-                    after:duration-300 hover:after:w-full">
+                           class="relative text-xs md:text-base text-[#2C3E50] font-medium transition-all duration-300
+                           hover:text-[#1A5276] after:content-[''] after:absolute after:left-0 after:bottom-0
+                               after:h-[2px] after:w-0 after:bg-[#2C3E50] after:transition-all after:duration-300
+                               hover:after:w-full">
                             See all products →
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-4">
+
+        <div class="container mx-auto px-2 lg:px-4">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mx-auto gap-2">
                 <!-- Drone -->
                 <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
                     <div class="image-box relative overflow-hidden">
                         <!-- New Arrival Badge -->
-                        <div
-                            class="absolute top-4 -right-8 bg-yellow-500 text-black text-center text-xs font-bold px-6 py-1 rounded-lg transform rotate-45 shadow-lg z-50 group-hover:hidden overflow-hidden">
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
                             New Arrival
                         </div>
-                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                             class="w-full h-48 object-cover lg:hidden transform transition-all duration-300 group-hover:scale-110"
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
-                        <a href="#" class="hidden lg:block">
-                            <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                                 class="w-full h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
-                                 alt="Drone">
-                        </a>
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
                     </div>
-                    <div
-                        class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
                         <!-- Add to Cart Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-cart-arrow-down"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
-                            Add to Cart
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
                                 <!-- Arrow for right-side tooltip -->
-                            <span
-                                class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
-                        </span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
                         </button>
+
                         <!-- Compare Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-exchange-alt"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Compare
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Add to Wishlist Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-heart"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Add to Wishlist
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Quick View Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-eye"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Quick View
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
                     </div>
-                    <div class="card-body p-4 text-center">
-                        <a href="#" class="text-lg font-semibold text-blue-600 hover:text-blue-800">Drone</a>
-                        <p class="text-gray-600 mt-2">DII Neo Fly Mace Combo Drone with DII RC API R</p>
-                        <p class="text-xl font-bold text-gray-800 mt-3">Tk 50,000</p>
-                        <p class="text-sm text-green-600 mt-2">Save Tk 2,500 on online order</p>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
                     </div>
                 </div>
                 <!-- Drone -->
                 <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
                     <div class="image-box relative overflow-hidden">
                         <!-- New Arrival Badge -->
-                        <div
-                            class="absolute top-4 -right-8 bg-yellow-500 text-black text-center text-xs font-bold px-6 py-1 rounded-lg transform rotate-45 shadow-lg z-50 group-hover:hidden overflow-hidden">
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
                             New Arrival
                         </div>
-                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                             class="w-full h-48 object-cover lg:hidden transform transition-all duration-300 group-hover:scale-110"
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
-                        <a href="#" class="hidden lg:block">
-                            <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                                 class="w-full h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
-                                 alt="Drone">
-                        </a>
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
                     </div>
-                    <div
-                        class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
                         <!-- Add to Cart Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-cart-arrow-down"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
-                            Add to Cart
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
                                 <!-- Arrow for right-side tooltip -->
-                            <span
-                                class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
-                        </span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
                         </button>
+
                         <!-- Compare Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-exchange-alt"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Compare
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Add to Wishlist Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-heart"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Add to Wishlist
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Quick View Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-eye"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Quick View
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
                     </div>
-                    <div class="card-body p-4 text-center">
-                        <a href="#" class="text-lg font-semibold text-blue-600 hover:text-blue-800">Drone</a>
-                        <p class="text-gray-600 mt-2">DII Neo Fly Mace Combo Drone with DII RC API R</p>
-                        <p class="text-xl font-bold text-gray-800 mt-3">Tk 50,000</p>
-                        <p class="text-sm text-green-600 mt-2">Save Tk 2,500 on online order</p>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
                     </div>
                 </div>
                 <!-- Drone -->
                 <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
                     <div class="image-box relative overflow-hidden">
                         <!-- New Arrival Badge -->
-                        <div
-                            class="absolute top-4 -right-8 bg-yellow-500 text-black text-center text-xs font-bold px-6 py-1 rounded-lg transform rotate-45 shadow-lg z-50 group-hover:hidden overflow-hidden">
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
                             New Arrival
                         </div>
-                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                             class="w-full h-48 object-cover lg:hidden transform transition-all duration-300 group-hover:scale-110"
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
-                        <a href="#" class="hidden lg:block">
-                            <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                                 class="w-full h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
-                                 alt="Drone">
-                        </a>
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
                     </div>
-                    <div
-                        class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
                         <!-- Add to Cart Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-cart-arrow-down"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
-                            Add to Cart
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
                                 <!-- Arrow for right-side tooltip -->
-                            <span
-                                class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
-                        </span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
                         </button>
+
                         <!-- Compare Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-exchange-alt"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Compare
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Add to Wishlist Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-heart"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Add to Wishlist
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Quick View Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-eye"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Quick View
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
                     </div>
-                    <div class="card-body p-4 text-center">
-                        <a href="#" class="text-lg font-semibold text-blue-600 hover:text-blue-800">Drone</a>
-                        <p class="text-gray-600 mt-2">DII Neo Fly Mace Combo Drone with DII RC API R</p>
-                        <p class="text-xl font-bold text-gray-800 mt-3">Tk 50,000</p>
-                        <p class="text-sm text-green-600 mt-2">Save Tk 2,500 on online order</p>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
                     </div>
                 </div>
                 <!-- Drone -->
                 <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
                     <div class="image-box relative overflow-hidden">
                         <!-- New Arrival Badge -->
-                        <div
-                            class="absolute top-4 -right-8 bg-yellow-500 text-black text-center text-xs font-bold px-6 py-1 rounded-lg transform rotate-45 shadow-lg z-50 group-hover:hidden overflow-hidden">
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
                             New Arrival
                         </div>
-                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                             class="w-full h-48 object-cover lg:hidden transform transition-all duration-300 group-hover:scale-110"
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
-                        <a href="#" class="hidden lg:block">
-                            <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                                 class="w-full h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
-                                 alt="Drone">
-                        </a>
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
                     </div>
-                    <div
-                        class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
                         <!-- Add to Cart Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-cart-arrow-down"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
-                            Add to Cart
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
                                 <!-- Arrow for right-side tooltip -->
-                            <span
-                                class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
-                        </span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
                         </button>
+
                         <!-- Compare Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-exchange-alt"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Compare
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Add to Wishlist Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-heart"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Add to Wishlist
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Quick View Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-eye"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Quick View
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
                     </div>
-                    <div class="card-body p-4 text-center">
-                        <a href="#" class="text-lg font-semibold text-blue-600 hover:text-blue-800">Drone</a>
-                        <p class="text-gray-600 mt-2">DII Neo Fly Mace Combo Drone with DII RC API R</p>
-                        <p class="text-xl font-bold text-gray-800 mt-3">Tk 50,000</p>
-                        <p class="text-sm text-green-600 mt-2">Save Tk 2,500 on online order</p>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
                     </div>
                 </div>
                 <!-- Drone -->
                 <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
                     <div class="image-box relative overflow-hidden">
                         <!-- New Arrival Badge -->
-                        <div
-                            class="absolute top-4 -right-8 bg-yellow-500 text-black text-center text-xs font-bold px-6 py-1 rounded-lg transform rotate-45 shadow-lg z-50 group-hover:hidden overflow-hidden">
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
                             New Arrival
                         </div>
-                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                             class="w-full h-48 object-cover lg:hidden transform transition-all duration-300 group-hover:scale-110"
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
-                        <a href="#" class="hidden lg:block">
-                            <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                                 class="w-full h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
-                                 alt="Drone">
-                        </a>
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
                     </div>
-                    <div
-                        class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
                         <!-- Add to Cart Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-cart-arrow-down"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
-                            Add to Cart
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
                                 <!-- Arrow for right-side tooltip -->
-                            <span
-                                class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
-                        </span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
                         </button>
+
                         <!-- Compare Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-exchange-alt"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Compare
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Add to Wishlist Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-heart"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Add to Wishlist
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Quick View Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-eye"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Quick View
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
                     </div>
-                    <div class="card-body p-4 text-center">
-                        <a href="#" class="text-lg font-semibold text-blue-600 hover:text-blue-800">Drone</a>
-                        <p class="text-gray-600 mt-2">DII Neo Fly Mace Combo Drone with DII RC API R</p>
-                        <p class="text-xl font-bold text-gray-800 mt-3">Tk 50,000</p>
-                        <p class="text-sm text-green-600 mt-2">Save Tk 2,500 on online order</p>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
                     </div>
                 </div>
                 <!-- Drone -->
                 <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
                     <div class="image-box relative overflow-hidden">
                         <!-- New Arrival Badge -->
-                        <div
-                            class="absolute top-4 -right-8 bg-yellow-500 text-black text-center text-xs font-bold px-6 py-1 rounded-lg transform rotate-45 shadow-lg z-50 group-hover:hidden overflow-hidden">
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
                             New Arrival
                         </div>
-                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                             class="w-full h-48 object-cover lg:hidden transform transition-all duration-300 group-hover:scale-110"
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
-                        <a href="#" class="hidden lg:block">
-                            <img src="{{ asset('uploads/products/small/product-2.webp') }}"
-                                 class="w-full h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
-                                 alt="Drone">
-                        </a>
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
                     </div>
-                    <div
-                        class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
                         <!-- Add to Cart Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-cart-arrow-down"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
-                            Add to Cart
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
                                 <!-- Arrow for right-side tooltip -->
-                            <span
-                                class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
-                        </span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
                         </button>
+
                         <!-- Compare Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-exchange-alt"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Compare
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Add to Wishlist Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-heart"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Add to Wishlist
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
+
                         <!-- Quick View Button with Tooltip -->
-                        <button
-                            class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
                             <i class="fas fa-eye"></i>
-                            <span
-                                class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
                                 Quick View
                                 <!-- Arrow for right-side tooltip -->
-                                <span
-                                    class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
                             </span>
                         </button>
                     </div>
-                    <div class="card-body p-4 text-center">
-                        <a href="#" class="text-lg font-semibold text-blue-600 hover:text-blue-800">Drone</a>
-                        <p class="text-gray-600 mt-2">DII Neo Fly Mace Combo Drone with DII RC API R</p>
-                        <p class="text-xl font-bold text-gray-800 mt-3">Tk 50,000</p>
-                        <p class="text-sm text-green-600 mt-2">Save Tk 2,500 on online order</p>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
+                    </div>
+                </div>
+                <!-- Drone -->
+                <div class="card bg-white rounded-lg shadow-md hover:ring-2 overflow-visible relative group">
+                    <div class="image-box relative overflow-hidden">
+                        <!-- New Arrival Badge -->
+                        <div class="absolute top-2 -right-5 lg:top-4 lg:-right-8 bg-yellow-500 text-black text-center text-[0.5rem] lg:text-xs font-bold px-4 sm:px-6 py-0.5 sm:py-1 rounded-lg transform rotate-45 shadow-lg z-10 group-hover:hidden overflow-hidden">
+                            New Arrival
+                        </div>
+
+                        <!-- Default Image (Visible by default) -->
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
+                             alt="Drone">
+
+                        <!-- Hover Image (Hidden by default, shown on hover) -->
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
+                             alt="Drone">
+                    </div>
+
+                    <div class="card-buttons absolute top-2 right-2 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-visible">
+                        <!-- Add to Cart Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Cart
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Compare Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Compare
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Add to Wishlist Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-heart"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Add to Wishlist
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+
+                        <!-- Quick View Button with Tooltip -->
+                        <button class="btn btn-sm bg-white p-2 rounded-full shadow-md hover:bg-lime-500 hover:text-white relative group/tooltip">
+                            <i class="fas fa-eye"></i>
+                            <span class="tooltip-text absolute left-full ml-2 top-1/2 transform -translate-y-1/2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 z-20 whitespace-nowrap">
+                                Quick View
+                                <!-- Arrow for right-side tooltip -->
+                                <span class="absolute -left-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-r-4 border-t-transparent border-b-transparent border-black"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="card-body p-2 lg:p-4 text-center">
+                        <!-- Product Title -->
+                        <a href="#" class="text-md lg:text-lg font-semibold text-black lg:text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            Drone
+                        </a>
+                        <!-- Product Description -->
+                        <p class="text-sm lg:text-md text-gray-600 mt-1 lg:mt-2 leading-tight lg:leading-normal">
+                            DII Neo Fly Mace Combo Drone with DII RC API R
+                        </p>
+                        <!-- Product Price -->
+                        <p class="text-xl font-bold text-gray-800 mt-2 lg:mt-3">
+                            Tk 50,000
+                        </p>
+                        <!-- Discount or Offer -->
+                        <p class="text-xs lg:text-sm text-green-600 mt-1 lg:mt-2">
+                            Save Tk 2,500 on online order
+                        </p>
                     </div>
                 </div>
 
-                <script>
-
-                </script>
                 <!-- Repeat for other products as needed -->
             </div>
         </div>
     </section>
-    <section class="bg-white shadow-md rounded-lg p-6 mt-8">
-        <h2 class="text-2xl font-semibold mb-4">Section Title</h2>
-        <p class="text-lg">Tailwind CSS provides utility-first classes to style your elements quickly.</p>
+
+    <section class="brands mt-4">
+        <!-- Header Section -->
+        <div class="container mx-auto px-4 py-2 mb-0 lg:mb-4">
+            <div class="row">
+                <div class="col-lg-12 px-0 lg:px-2">
+                    <div class="flex justify-between items-center border-b border-gray-300 pb-0">
+
+                        <!-- "Brands" with a premium color scheme -->
+                        <div class="relative flex items-center group">
+                            <h6 class="relative text-xs md:text-base text-white font-semibold px-4 py-1 lg:py-2
+                    bg-gradient-to-r from-[#2c3e50] to-[#34495e] transform skew-x-[-6deg]
+                    rounded-lg shadow-md transition-all duration-300
+                    hover:from-[#273746] hover:to-[#2c3e50] hover:shadow-gray-500/50">
+                                <span class="inline-block transform skew-x-[6deg]">Brands</span>
+                            </h6>
+                        </div>
+
+                        <!-- "See all brands" link with a gold hover effect -->
+                        <a href="/brands"
+                           class="relative text-xs md:text-base text-[#2C3E50] font-medium transition-all duration-300
+                           hover:text-[#1A5276] after:content-[''] after:absolute after:left-0 after:bottom-0
+                               after:h-[2px] after:w-0 after:bg-[#2C3E50] after:transition-all after:duration-300
+                               hover:after:w-full">
+                            See all brands →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 p-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-none shadow-lg">
+            <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                <a href="/brand/apple" class="flex flex-col items-center space-y-2">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}" alt="Apple" class="w-16 h-16 rounded-full object-fill">
+                    </div>
+                    <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Apple</span>
+                </a>
+            </li>
+            <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                <a href="/brand/microsoft" class="flex flex-col items-center space-y-2">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}" alt="Microsoft" class="w-16 h-16 rounded-full object-fill">
+                    </div>
+                    <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Microsoft</span>
+                </a>
+            </li>
+            <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                <a href="/brand/hp" class="flex flex-col items-center space-y-2">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
+                        <img src="{{ asset('uploads/products/small/product-3.webp') }}" alt="HP" class="w-16 h-16 rounded-full object-fill">
+                    </div>
+                    <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">HP</span>
+                </a>
+            </li>
+            <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                <a href="/brand/asus" class="flex flex-col items-center space-y-2">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
+                        <img src="{{ asset('uploads/products/small/product-4.webp') }}" alt="Asus" class="w-16 h-16 rounded-full object-fill">
+                    </div>
+                    <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Asus</span>
+                </a>
+            </li>
+            <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                <a href="/brand/dell" class="flex flex-col items-center space-y-2">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
+                        <img src="{{ asset('uploads/products/small/product-5.webp') }}" alt="Dell" class="w-16 h-16 rounded-full object-fill">
+                    </div>
+                    <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Dell</span>
+                </a>
+            </li>
+            <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                <a href="/brand/lenovo" class="flex flex-col items-center space-y-2">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
+                        <img src="{{ asset('uploads/products/small/product-6.webp') }}" alt="Lenovo" class="w-16 h-16 rounded-full object-fill">
+                    </div>
+                    <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Lenovo</span>
+                </a>
+            </li>
+        </ul>
+
+
     </section>
-</div>
+
+    <footer class="bg-gray-950 px-2 md:px-8 pt-8 pb-6 lg:pb-1">
+        <!-- Footer Section -->
+        <div class="container mx-auto px-2 lg:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-0 md:gap-8 items-start">
+
+                <!-- Footer Info Section -->
+                <div class="flex flex-col col-span-2 lg:col-span-1 items-center">
+                    <a href="" class="mx-auto py-2">
+                        <img src="{{ asset('logos/logo.svg') }}" alt="TARPOR" class="w-24 h-auto mx-auto" />
+                    </a>
+                    <div class="mt-2 flex space-x-4 px-2 py-2">
+                        <a href="https://www.facebook.com/#" class="text-white hover:text-blue-600" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://twitter.com/#" class="text-white hover:text-blue-400" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/#" class="text-white hover:text-red-600" title="Youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/#" class="text-white hover:text-pink-600" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://bd.linkedin.com/company/#" class="text-white hover:text-blue-700" title="Linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6 mb-10">
+                        <a href="https://forms.gle/cs2dCCxfkaWqPBse6" class="bg-red-600 text-white py-2 px-4 rounded-full hover:bg-red-700" target="_blank" rel="noreferrer">
+                            Complaint Box
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Links Section 1 -->
+                <div class="text-left leading-5 md:border-l border-white pr-4 md:pl-4">
+                    <ul class="space-y-2 text-white text-xs md:text-sm">
+                        <li><a href="/page/about-us" class="hover:text-lime-500">About us</a></li>
+                        <li><a href="/page/branches-and-pickup-points" class="hover:text-lime-500">Branches & Pickup Points</a></li>
+                        <li><a href="/page/warranty" class="hover:text-lime-500">Warranty</a></li>
+                        <li><a href="/page/repair-and-services" class="hover:text-lime-500">Repair and Services</a></li>
+                        <li><a href="/page/emi-facility" class="hover:text-lime-500">EMI</a></li>
+                        <li><a href="/glossary" class="hover:text-lime-500">Glossary</a></li>
+                        <li><a href="/blog" class="hover:text-lime-500">Blog</a></li>
+                        <li><a href="/trouble" class="lg:hidden hover:text-lime-500">Trouble</a></li>
+                        <li><a href="/new-arrival-products" class="lg:hidden hover:text-lime-500">New Arrival</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Links Section 2 -->
+                <div class="text-left leading-5 border-l md:border-l border-white pl-4 md:pl-4">
+                    <ul class="space-y-2 text-white text-xs md:text-sm">
+                        <li><a href="/page/order-procedure" class="hover:text-lime-500">Order Procedure</a></li>
+                        <li><a href="/page/return-refund-cancelation" class="hover:text-lime-500">Return, Refund & Cancellation</a></li>
+                        <li><a href="/page/payment-method" class="hover:text-lime-500">Payment Method</a></li>
+                        <li><a href="/page/terms-conditions" class="hover:text-lime-500">Terms & Conditions</a></li>
+                        <li><a href="/page/privacy-policy" class="hover:text-lime-500">Privacy Policy</a></li>
+                        <li><a href="/page/cookie-policy" class="hover:text-lime-500">Cookie Policy</a></li>
+                        <li><a href="/page/digital-ecom-2021" class="hover:text-lime-500">ডিজিটাল কমার্স নির্দেশিকা ২০২১</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- Footer Contact Section -->
+                <div class="text-center md:text-left col-span-2 lg:col-span-1 leading-5 md:border-l border-white md:pl-4">
+                    <ul class="text-white space-y-2">
+                        <li class="text-lg font-semibold">Contact Us</li>
+                    </ul>
+                    <p class="text-gray-300">
+                        Head office <br> TARPOR ! Shop Online, Save Time! <br>
+                        Uttara, Dhaka, 1230 <br>
+                        <span class="lg:hidden"><i class="fa fa-envelope"></i> info@tarpor.com</span> <br>
+                        <span class="flex justify-center lg:justify-start items-center">
+                          <i class="fas fa-phone"></i>
+                          <a href="tel:01551805527" class="text-white">&nbsp;01551805527</a>,
+                        </span>
+                        <i class="fab fa-whatsapp text-green-600"></i>
+                        <a href="https://api.whatsapp.com/send?phone=#" class="text-white"> +# (Message
+                            only)</a><br>
+                        <i class="fas fa-map-marker-alt text-red-600"></i>
+                        Map Link: <a href="https://tinyurl.com/#" target="_blank" class="text-lime-500">https://tinyurl.com/#</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="container mx-auto py-4 text-center text-gray-400">
+            <div class="text-xs">Prices are subject to change without any prior notice.</div>
+            <div class="text-xs pt-1">TARPOR © {{ date('Y') }} All Rights Reserved. Designed by TARPOR</div>
+            <input type="hidden" name="today" value="{{ \Carbon\Carbon::now('Asia/Dhaka')->format('d-m-Y g:h a') }}">
+        </div>
+
+
+    </footer>
+
+
 
 <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
 </body>
