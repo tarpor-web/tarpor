@@ -8,7 +8,7 @@
     <meta name="title" content="TARPOR | Shop Online, Save Time!">
     <meta name="keywords" content="Online Shopping, Best Deals, Electronics, Fashion, Home Goods">
     <meta name="description" content="Shop online at TARPOR for the best deals on electronics, fashion, home goods, and more. Enjoy fast shipping, secure payment, and excellent customer service.">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="TARPOR | Online Shopping in BD | Shop Online, Save Time">
@@ -17,11 +17,17 @@
     <meta property="og:url" content="https://www.tarpor.com">
     <meta property="og:type" content="website">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tarporbd">
+
+    <!-- Language -->
+    <meta http-equiv="content-language" content="en-bd">
     <!-- Title -->
     <title>TARPOR | Online Shopping in BD | Shop Online, Save Time</title>
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.tarpor.com">
+    <link rel="canonical" href="https://www.tarpor.com{{ request()->getRequestUri() }}">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('/logos/favicon.ico') }}" type="image/png">
@@ -40,8 +46,10 @@
             "@context": "http://schema.org",
             "@type": "LocalBusiness",
             "name": "TARPOR",
-            "url": "https://www.tarpor.com/",
+            "url": "https://tarpor.com",
+            "priceRange": "৳৳",
             "logo": "{{ asset('/logos/logo.svg') }}",
+            "openingHours": "Sa-Th 09:00-23:00"
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Uttara",
@@ -60,10 +68,10 @@
         {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "url": "https://www.tarpor.com/",
+            "url": "https://tarpor.com/",
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://www.tarpor.com/search?q={search_term_string}",
+                "target": "https://tarpor.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
             }
         }
@@ -182,7 +190,7 @@
             <!-- Logo -->
             <div class="w-1/3 lg:w-3/12 pt-2 md:pt-0 flex justify-start">
                 <a href="https://www.tarpor.com" aria-label="Home">
-                    <img src="{{ asset('/logos/logo.svg') }}" alt="TARPOR" class="w-24 h-auto">
+                    <img src="{{ asset('/logos/logo.svg') }}" loading="lazy" alt="TARPOR" class="w-24 h-auto">
                 </a>
             </div>
 
@@ -389,6 +397,7 @@
                                 <a href="/dji-flip-drone-with-dji-rc-2-remote">
                                     <img
                                         src="{{ asset('uploads/slides/slide-1.webp') }}"
+                                        loading="lazy"
                                         alt="DJI Flip Drone"
                                         class="w-full h-full object-cover rounded-lg"
                                     />
@@ -399,6 +408,7 @@
                                 <a href="/offers/falgun-fest">
                                     <img
                                         src="{{ asset('uploads/slides/slide-2.webp') }}"
+                                        loading="lazy"
                                         alt="Falgun Fest"
                                         class="w-full h-full object-cover rounded-lg"
                                     />
@@ -430,6 +440,7 @@
                             <a href="/store/logitech">
                                 <img
                                     src="{{ asset('uploads/ads/ad-1.webp') }}"
+                                    loading="lazy"
                                     alt="Logitech Surprise Discount"
                                     class="w-full h-full object-cover rounded-lg"
                                 />
@@ -440,6 +451,7 @@
                             <a href="/hohem-mic-01-2tx-plus-1rx-microphone">
                                 <img
                                     src="{{ asset('uploads/ads/ad-2.webp') }}"
+                                    loading="lazy"
                                     alt="Hohem MIC-01 (2TX + 1RX)"
                                     class="w-full h-full object-cover rounded-lg"
                                 />
@@ -465,6 +477,7 @@
                         <a href="/hohem-mic-01-2tx-plus-1rx-microphone">
                             <img
                                 src="{{ asset('uploads/ads/ad-2.webp') }}"
+                                loading="lazy"
                                 alt="Hohem MIC-01 (2TX + 1RX)"
                                 class="w-full h-full object-cover rounded-lg"
                             />
@@ -629,7 +642,7 @@
                 <!-- Product Item 1 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/laptop-all-laptop" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/Laptop.svg') }}" alt="Laptop"
+                        <img src="{{ asset('uploads/category-icon/Laptop.svg') }}" loading="lazy" alt="Laptop"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/laptop-all-laptop"
@@ -641,7 +654,7 @@
                 <!-- Product Item 2 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/desktop-component-processor" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/Processor.svg') }}" alt="Processor"
+                        <img src="{{ asset('uploads/category-icon/Processor.svg') }}" loading="lazy" alt="Processor"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/desktop-component-processor"
@@ -653,7 +666,7 @@
                 <!-- Product Item 3 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/desktop-pc-all-in-one-pc" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/all-in-one.svg') }}" alt="AIO PC"
+                        <img src="{{ asset('uploads/category-icon/all-in-one.svg') }}" loading="lazy" alt="AIO PC"
                          class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/desktop-pc-all-in-one-pc"
@@ -665,7 +678,7 @@
                 <!-- Product Item 4 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/audio-video-speaker" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/speaker.svg') }}" alt="Speaker"
+                        <img src="{{ asset('uploads/category-icon/speaker.svg') }}" loading="lazy" alt="Speaker"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/audio-video-speaker"
@@ -677,7 +690,7 @@
                 <!-- Product Item 5 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/monitor-all-monitor" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/Monitor.svg') }}" alt="Monitor"
+                        <img src="{{ asset('uploads/category-icon/Monitor.svg') }}" loading="lazy" alt="Monitor"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/monitor-all-monitor"
@@ -689,7 +702,7 @@
                 <!-- Product Item 6 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/software" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/software.svg') }}" alt="Software"
+                        <img src="{{ asset('uploads/category-icon/software.svg') }}" loading="lazy" alt="Software"
                                                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/software"
@@ -701,7 +714,7 @@
                 <!-- Product Item 7 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/gaming" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/gaming.svg') }}" alt="Gaming"
+                        <img src="{{ asset('uploads/category-icon/gaming.svg') }}" loading="lazy" alt="Gaming"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/gaming"
@@ -713,7 +726,7 @@
                 <!-- Product Item 8 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/all-laser-and-ink-printer" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/printer.svg') }}" alt="Printer"
+                        <img src="{{ asset('uploads/category-icon/printer.svg') }}" loading="lazy" alt="Printer"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/all-laser-and-ink-printer"
@@ -725,7 +738,7 @@
                 <!-- Product Item 9 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/desktop-component-graphics-card" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/GPU.svg') }}" alt="GPU"
+                        <img src="{{ asset('uploads/category-icon/GPU.svg') }}" loading="lazy" alt="GPU"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/desktop-component-graphics-card"
@@ -737,7 +750,7 @@
                 <!-- Product Item 10 -->
                 <li class="flex flex-col items-center group min-w-[60px] md:min-w-[80px] lg:min-w-[100px]">
                     <a href="/category/camera" class="text-center">
-                        <img src="{{ asset('uploads/category-icon/camera.svg') }}" alt="Camera"
+                        <img src="{{ asset('uploads/category-icon/camera.svg') }}" loading="lazy" alt="Camera"
                           class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     </a>
                     <a href="/category/camera"
@@ -790,11 +803,13 @@
 
                         <!-- Default Image (Visible by default) -->
                         <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             loading="lazy"
                              class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
 
                         <!-- Hover Image (Hidden by default, shown on hover) -->
                         <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             loading="lazy"
                              class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
                              alt="Drone">
                     </div>
@@ -870,11 +885,13 @@
 
                         <!-- Default Image (Visible by default) -->
                         <img src="{{ asset('uploads/products/small/product-1.webp') }}"
+                             loading="lazy"
                              class="w-full h-32 lg:h-48 object-cover transform transition-all duration-300 group-hover:scale-110"
                              alt="Drone">
 
                         <!-- Hover Image (Hidden by default, shown on hover) -->
                         <img src="{{ asset('uploads/products/small/product-2.webp') }}"
+                             loading="lazy"
                              class="w-full h-32 lg:h-48 object-cover absolute top-0 left-0 opacity-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-110"
                              alt="Drone">
                     </div>
@@ -972,7 +989,7 @@
         <ul class="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-none shadow-lg">            <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
                 <a href="/brand/apple" class="flex flex-col items-center space-y-2">
                     <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
-                        <img src="{{ asset('uploads/products/small/product-1.webp') }}" alt="Apple" class="w-16 h-16 rounded-full object-fill">
+                        <img src="{{ asset('uploads/products/small/product-1.webp') }}" loading="lazy" alt="Apple" class="w-16 h-16 rounded-full object-fill">
                     </div>
                     <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Apple</span>
                 </a>
@@ -980,7 +997,7 @@
             <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
                 <a href="/brand/microsoft" class="flex flex-col items-center space-y-2">
                     <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
-                        <img src="{{ asset('uploads/products/small/product-2.webp') }}" alt="Microsoft" class="w-16 h-16 rounded-full object-fill">
+                        <img src="{{ asset('uploads/products/small/product-2.webp') }}" loading="lazy" alt="Microsoft" class="w-16 h-16 rounded-full object-fill">
                     </div>
                     <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Microsoft</span>
                 </a>
@@ -988,7 +1005,7 @@
             <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
                 <a href="/brand/hp" class="flex flex-col items-center space-y-2">
                     <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
-                        <img src="{{ asset('uploads/products/small/product-3.webp') }}" alt="HP" class="w-16 h-16 rounded-full object-fill">
+                        <img src="{{ asset('uploads/products/small/product-3.webp') }}" loading="lazy" alt="HP" class="w-16 h-16 rounded-full object-fill">
                     </div>
                     <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">HP</span>
                 </a>
@@ -996,7 +1013,7 @@
             <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
                 <a href="/brand/asus" class="flex flex-col items-center space-y-2">
                     <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
-                        <img src="{{ asset('uploads/products/small/product-4.webp') }}" alt="Asus" class="w-16 h-16 rounded-full object-fill">
+                        <img src="{{ asset('uploads/products/small/product-4.webp') }}" loading="lazy" alt="Asus" class="w-16 h-16 rounded-full object-fill">
                     </div>
                     <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Asus</span>
                 </a>
@@ -1004,7 +1021,7 @@
             <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
                 <a href="/brand/dell" class="flex flex-col items-center space-y-2">
                     <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
-                        <img src="{{ asset('uploads/products/small/product-5.webp') }}" alt="Dell" class="w-16 h-16 rounded-full object-fill">
+                        <img src="{{ asset('uploads/products/small/product-5.webp') }}" loading="lazy" alt="Dell" class="w-16 h-16 rounded-full object-fill">
                     </div>
                     <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Dell</span>
                 </a>
@@ -1012,7 +1029,7 @@
             <li class="group relative flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-xl shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
                 <a href="/brand/lenovo" class="flex flex-col items-center space-y-2">
                     <div class="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full transition-all duration-300 group-hover:bg-white/30">
-                        <img src="{{ asset('uploads/products/small/product-6.webp') }}" alt="Lenovo" class="w-16 h-16 rounded-full object-fill">
+                        <img src="{{ asset('uploads/products/small/product-6.webp') }}" loading="lazy" alt="Lenovo" class="w-16 h-16 rounded-full object-fill">
                     </div>
                     <span class="text-center font-semibold text-white text-lg tracking-wide group-hover:text-lime-400">Lenovo</span>
                 </a>
@@ -1021,6 +1038,138 @@
 
 
     </section>
+    <section class="bg-gray-50 pt-2 pb-6">
+        <div class="container mx-auto">
+                <!-- Main Heading (H1) -->
+                <h1 class="text-lg text-left font-bold text-gray-900 px-4 mb-4">
+                    TARPOR: Bangladesh's #1 Online Fashion Destination
+                </h1>
+
+                <!-- Introductory Paragraph -->
+                <p class="text-base text-justify text-gray-700 px-4 mb-4" id="introParagraph">
+                    Welcome to <strong class="font-semibold">TARPOR</strong>, Bangladesh’s premier online fashion destination, where style meets affordability. Discover a meticulously curated collection of high-quality apparel, footwear, accessories, and lifestyle products tailored to elevate your wardrobe. From everyday casual wear to sophisticated formal attire and statement pieces, Tarpor brings you the latest trends and timeless classics at unbeatable prices.
+                    <span id="dots">...</span>
+                    <span id="more" style="display:none;">
+                    Experience seamless shopping with fast delivery, flexible payment options, and exceptional customer service. Whether you're dressing up for a special occasion or refreshing your everyday look, Tarpor is your go-to fashion hub for every style and season.
+                </span>
+                </p>
+                <a href="javascript:void(0);" id="readMoreLink" class="text-blue-600 hover:underline float-right" onclick="toggleText()">Read More</a>
+
+                <!-- The section content to be toggled -->
+                <div id="extraContent" style="display:none;">
+                    <!-- Key Benefits Section (H2) -->
+                    <h2 class="text-lg font-bold text-gray-900 mb-6 px-4 text-left">Why Choose TARPOR?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mb-8">
+                        <!-- Subsection 1 (H3) -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Premium Fashion Experience</h3>
+                            <ul class="text-base text-gray-700 space-y-2 text-left">
+                                <li>✅ <strong>Affordable Prices:</strong> High-quality fashion for every budget</li>
+                                <li>✅ <strong>Wide Range:</strong> Exclusive collections for men, women, and kids</li>
+                                <li>✅ <strong>Fast Delivery:</strong> Free shipping across Bangladesh</li>
+                                <li>✅ <strong>Flexible Payments:</strong> Cash on delivery, EMI, and card options</li>
+                            </ul>
+                        </div>
+
+                        <!-- Subsection 2 (H3) -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Trusted Service</h3>
+                            <ul class="text-base text-gray-700 space-y-2 text-left">
+                                <li>🌟 <strong>100% Authentic:</strong> Genuine brands with quality assurance</li>
+                                <li>🌟 <strong>Easy Returns:</strong> Hassle-free return and refund policy</li>
+                                <li>🌟 <strong>24/7 Support:</strong> Dedicated customer service team ready to assist</li>
+                                <li>🌟 <strong>Secure Shopping:</strong> Safe and encrypted transactions for peace of mind</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Collections Section (H2) -->
+                    <h2 class="text-md font-bold text-gray-900 px-4 mb-4 text-left">Fashion for Every Occasion</h2>
+                    <p class="text-base text-gray-700 px-4 mb-4 text-left">
+                        From casual daywear to elegant evening outfits, Tarpor’s collections are designed to make you look and feel your best:
+                    </p>
+                    <ul class="text-base text-gray-700 list-inside px-4 mb-8 text-left">
+                        <li>👗 <strong>Women’s Collection:</strong> Dresses, tops, skirts, and ethnic wear</li>
+                        <li>👔 <strong>Men’s Collection:</strong> Shirts, trousers, blazers, and accessories</li>
+                        <li>👶 <strong>Kids’ Collection:</strong> Stylish and comfortable clothing for children</li>
+                    </ul>
+
+                    <!-- Seasonal Collections (H2) -->
+                    <h2 class="text-md font-bold text-gray-900 px-4 mb-4 text-left">Trending Now</h2>
+                    <p class="text-base text-gray-700 px-4 mb-4 text-left">
+                        Explore our most sought-after collections, updated weekly:
+                    </p>
+                    <ul class="text-base text-gray-700 list-inside px-4 mb-8 text-left">
+                        <li>🌟 <strong>Summer Essentials:</strong> Lightweight fabrics and breathable designs</li>
+                        <li>🌟 <strong>Office Wear:</strong> Professional looks with modern twists</li>
+                        <li>🌟 <strong>Party Collection:</strong> Standout pieces for special occasions</li>
+                    </ul>
+
+                    <!-- Professional CTA Section -->
+                    <div class="bg-slate-900 p-12 rounded-xl text-white text-center shadow-2xl mb-0">
+                        <div class="max-w-2xl mx-auto">
+                            <h2 class="text-4xl font-bold mb-6 tracking-tight text-gray-100">
+                                Elevate Your Wardrobe with Timeless Style
+                            </h2>
+
+                            <p class="text-xl mb-8 text-gray-300 leading-relaxed">
+                                Join 500,000+ discerning shoppers in Bangladesh who choose<br class="hidden md:block">
+                                Tarpor for exceptional quality and curated fashion
+                            </p>
+
+                            <div class="flex justify-center space-x-4">
+                                <a href="/shop" class="bg-emerald-600 text-white font-semibold py-4 px-10 rounded-lg hover:bg-emerald-700 transition-colors duration-300 flex items-center shadow-md hover:shadow-lg">
+                                    <span>Discover Collections</span>
+                                    <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="mt-8 pt-6 border-t border-slate-700">
+                                <div class="flex items-center justify-center space-x-3 text-sm text-slate-400">
+                                    <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="flex items-center space-x-4">
+                                    <span>Free Nationwide Shipping</span>
+                                    <span class="text-slate-600">•</span>
+                                    <span>5-Day Returns</span>
+                                    <span class="text-slate-600">•</span>
+                                    <span>Secure Checkout</span>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script>
+        function toggleText() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var linkText = document.getElementById("readMoreLink");
+            var extraContent = document.getElementById("extraContent");
+
+            if (moreText.style.display === "none") {
+                // Show the extra content and more text
+                moreText.style.display = "inline";
+                dots.style.display = "none";
+                linkText.innerHTML = "Read Less";
+                extraContent.style.display = "block"; // Show all content
+            } else {
+                // Hide the extra content and revert to the initial state
+                moreText.style.display = "none";
+                dots.style.display = "inline";
+                linkText.innerHTML = "Read More";
+                extraContent.style.display = "none"; // Hide the additional content
+            }
+        }
+    </script>
+
+
 
     <div class="footer bg-gray-950 px-2 md:px-8 pt-8 pb-6 lg:pb-1">
         <!-- Footer Section -->
@@ -1030,7 +1179,7 @@
                 <!-- Footer Info Section (This will appear in both small and large screens) -->
                 <div class="flex flex-col items-center col-span-2 lg:col-span-1 text-center lg:text-left">
                     <a href="" class="mx-auto py-2">
-                        <img src="{{ asset('logos/logo.svg') }}" alt="TARPOR" class="w-24 h-auto mx-auto" />
+                        <img src="{{ asset('logos/logo.svg') }}" loading="lazy" alt="TARPOR" class="w-24 h-auto mx-auto" />
                     </a>
                     <div class="mt-2 flex space-x-4 px-2 py-2 justify-center lg:justify-start">
                         <a href="https://www.facebook.com/#" class="text-white hover:text-blue-600" title="Facebook">
@@ -1084,7 +1233,6 @@
                     </ul>
                 </div>
 
-
                 <!-- Footer Contact Section (This will appear in both small and large screens) -->
                 <div class="flex flex-col items-center lg:items-start col-span-2 lg:col-span-1 text-center lg:text-left leading-5 lg:border-l border-white md:pl-4 mt-6 md:mt-0">
                     <ul class="text-white space-y-2">
@@ -1106,19 +1254,14 @@
                 </div>
             </div>
 
-        <!-- Copyright Section -->
-        <div class="container mx-auto py-4 text-center text-gray-400">
-            <div class="text-xs">Prices are subject to change without any prior notice.</div>
-            <div class="text-xs pt-1">TARPOR © {{ date('Y') }} All Rights Reserved. Designed by TARPOR</div>
-            <input type="hidden" name="today" value="{{ \Carbon\Carbon::now('Asia/Dhaka')->format('d-m-Y g:h a') }}">
+            <!-- Copyright Section -->
+            <div class="container mx-auto py-4 text-center text-gray-400">
+                <div class="text-xs">Prices are subject to change without any prior notice.</div>
+                <div class="text-xs pt-1">TARPOR © {{ date('Y') }} All Rights Reserved. Designed by TARPOR</div>
+                <input type="hidden" name="today" value="{{ \Carbon\Carbon::now('Asia/Dhaka')->format('d-m-Y g:h a') }}">
+            </div>
         </div>
-
     </div>
-
-
-
-
-
 
 <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
 </body>
