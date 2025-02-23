@@ -56,6 +56,8 @@
 
     @include('partials.footer')
 
+    @include('partials.toast')
+
     <!-- Scripts -->
     @include('partials.scripts')
     @stack('footer-scripts')
