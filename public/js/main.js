@@ -373,4 +373,24 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+    // This is to show SEO part for HOME page
+    document.getElementById("readMoreLink").addEventListener("click", function () {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var extraContent = document.getElementById("extraContent");
+
+        if (moreText.style.display === "none") {
+            // Show extra content
+            moreText.style.display = "inline";
+            dots.style.display = "none";
+            this.innerHTML = "Read Less";
+            extraContent.style.display = "block";
+        } else {
+            // Hide extra content
+            moreText.style.display = "none";
+            dots.style.display = "inline";
+            this.innerHTML = "Read More";
+            extraContent.style.display = "none";
+        }
+    });
 });

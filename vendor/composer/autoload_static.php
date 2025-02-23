@@ -24,8 +24,6 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '476ca15b8d69b04665cd879be9cb4c68' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
@@ -35,10 +33,13 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         '7f7ac2ddea9cc3fb4b2cc201d63dbc10' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Log/functions.php',
         '493c6aea52f6009bab023b26c21a386a' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/functions.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -87,6 +88,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Clock\\' => 24,
+            'Spatie\\Permission\\' => 18,
         ),
         'R' => 
         array (
@@ -103,8 +105,14 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Clock\\' => 10,
+            'PragmaRX\\Google2FA\\' => 19,
+            'PragmaRX\\Google2FAQRCode\\Tests\\' => 31,
+            'PragmaRX\\Google2FAQRCode\\' => 25,
+            'PragmaRX\\Google2FALaravel\\Tests\\' => 32,
+            'PragmaRX\\Google2FALaravel\\' => 26,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'ParagonIE\\ConstantTime\\' => 23,
         ),
         'N' => 
         array (
@@ -314,6 +322,10 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         array (
             0 => __DIR__ . '/..' . '/symfony/clock',
         ),
+        'Spatie\\Permission\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-permission/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -336,8 +348,8 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -355,6 +367,26 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
+        'PragmaRX\\Google2FA\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pragmarx/google2fa/src',
+        ),
+        'PragmaRX\\Google2FAQRCode\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/tests',
+        ),
+        'PragmaRX\\Google2FAQRCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/src',
+        ),
+        'PragmaRX\\Google2FALaravel\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/tests',
+        ),
+        'PragmaRX\\Google2FALaravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -362,6 +394,10 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'ParagonIE\\ConstantTime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
         ),
         'NunoMaduro\\Collision\\' => 
         array (
@@ -377,8 +413,8 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces',
-            1 => __DIR__ . '/..' . '/league/uri',
+            0 => __DIR__ . '/..' . '/league/uri',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces',
         ),
         'League\\MimeTypeDetection\\' => 
         array (
@@ -4610,6 +4646,17 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Xml.php',
         'PHPUnit\\Util\\Xml\\Loader' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Loader.php',
         'PHPUnit\\Util\\Xml\\XmlException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Exception/XmlException.php',
+        'ParagonIE\\ConstantTime\\Base32' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Base32.php',
+        'ParagonIE\\ConstantTime\\Base32Hex' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Base32Hex.php',
+        'ParagonIE\\ConstantTime\\Base64' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Base64.php',
+        'ParagonIE\\ConstantTime\\Base64DotSlash' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Base64DotSlash.php',
+        'ParagonIE\\ConstantTime\\Base64DotSlashOrdered' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Base64DotSlashOrdered.php',
+        'ParagonIE\\ConstantTime\\Base64UrlSafe' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Base64UrlSafe.php',
+        'ParagonIE\\ConstantTime\\Binary' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Binary.php',
+        'ParagonIE\\ConstantTime\\EncoderInterface' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/EncoderInterface.php',
+        'ParagonIE\\ConstantTime\\Encoding' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Encoding.php',
+        'ParagonIE\\ConstantTime\\Hex' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Hex.php',
+        'ParagonIE\\ConstantTime\\RFC4648' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/RFC4648.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -4951,6 +4998,55 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
         'PhpParser\\Token' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Token.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'PragmaRX\\Google2FALaravel\\Events\\EmptyOneTimePasswordReceived' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Events/EmptyOneTimePasswordReceived.php',
+        'PragmaRX\\Google2FALaravel\\Events\\LoggedOut' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Events/LoggedOut.php',
+        'PragmaRX\\Google2FALaravel\\Events\\LoginFailed' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Events/LoginFailed.php',
+        'PragmaRX\\Google2FALaravel\\Events\\LoginSucceeded' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Events/LoginSucceeded.php',
+        'PragmaRX\\Google2FALaravel\\Events\\OneTimePasswordExpired' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Events/OneTimePasswordExpired.php',
+        'PragmaRX\\Google2FALaravel\\Events\\OneTimePasswordRequested' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Events/OneTimePasswordRequested.php',
+        'PragmaRX\\Google2FALaravel\\Events\\OneTimePasswordRequested53' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Events/OneTimePasswordRequested53.php',
+        'PragmaRX\\Google2FALaravel\\Exceptions\\InvalidOneTimePassword' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Exceptions/InvalidOneTimePassword.php',
+        'PragmaRX\\Google2FALaravel\\Exceptions\\InvalidSecretKey' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Exceptions/InvalidSecretKey.php',
+        'PragmaRX\\Google2FALaravel\\Facade' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Facade.php',
+        'PragmaRX\\Google2FALaravel\\Google2FA' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Google2FA.php',
+        'PragmaRX\\Google2FALaravel\\Listeners\\LoginViaRemember' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Listeners/LoginViaRemember.php',
+        'PragmaRX\\Google2FALaravel\\Middleware' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Middleware.php',
+        'PragmaRX\\Google2FALaravel\\MiddlewareStateless' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/MiddlewareStateless.php',
+        'PragmaRX\\Google2FALaravel\\ServiceProvider' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/ServiceProvider.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Auth' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Auth.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Authenticator' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Authenticator.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Config' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Config.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Constants' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Constants.php',
+        'PragmaRX\\Google2FALaravel\\Support\\ErrorBag' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/ErrorBag.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Input' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Input.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Request' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Request.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Response' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Response.php',
+        'PragmaRX\\Google2FALaravel\\Support\\Session' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/src/Support/Session.php',
+        'PragmaRX\\Google2FALaravel\\Tests\\Constants' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/tests/Constants.php',
+        'PragmaRX\\Google2FALaravel\\Tests\\Google2FaLaravelTest' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/tests/Google2FaLaravelTest.php',
+        'PragmaRX\\Google2FALaravel\\Tests\\Support\\User' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/tests/Support/User.php',
+        'PragmaRX\\Google2FALaravel\\Tests\\TestCase' => __DIR__ . '/..' . '/pragmarx/google2fa-laravel/tests/TestCase.php',
+        'PragmaRX\\Google2FAQRCode\\Exceptions\\MissingQrCodeServiceException' => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/src/Exceptions/MissingQrCodeServiceException.php',
+        'PragmaRX\\Google2FAQRCode\\Google2FA' => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/src/Google2FA.php',
+        'PragmaRX\\Google2FAQRCode\\QRCode\\Bacon' => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/src/QRCode/Bacon.php',
+        'PragmaRX\\Google2FAQRCode\\QRCode\\Chillerlan' => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/src/QRCode/Chillerlan.php',
+        'PragmaRX\\Google2FAQRCode\\QRCode\\QRCodeServiceContract' => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/src/QRCode/QRCodeServiceContract.php',
+        'PragmaRX\\Google2FAQRCode\\Tests\\Constants' => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/tests/Constants.php',
+        'PragmaRX\\Google2FAQRCode\\Tests\\Google2FATest' => __DIR__ . '/..' . '/pragmarx/google2fa-qrcode/tests/Google2FATest.php',
+        'PragmaRX\\Google2FA\\Exceptions\\Contracts\\Google2FA' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/Contracts/Google2FA.php',
+        'PragmaRX\\Google2FA\\Exceptions\\Contracts\\IncompatibleWithGoogleAuthenticator' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/Contracts/IncompatibleWithGoogleAuthenticator.php',
+        'PragmaRX\\Google2FA\\Exceptions\\Contracts\\InvalidAlgorithm' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/Contracts/InvalidAlgorithm.php',
+        'PragmaRX\\Google2FA\\Exceptions\\Contracts\\InvalidCharacters' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/Contracts/InvalidCharacters.php',
+        'PragmaRX\\Google2FA\\Exceptions\\Contracts\\SecretKeyTooShort' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/Contracts/SecretKeyTooShort.php',
+        'PragmaRX\\Google2FA\\Exceptions\\Google2FAException' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/Google2FAException.php',
+        'PragmaRX\\Google2FA\\Exceptions\\IncompatibleWithGoogleAuthenticatorException' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/IncompatibleWithGoogleAuthenticatorException.php',
+        'PragmaRX\\Google2FA\\Exceptions\\InvalidAlgorithmException' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/InvalidAlgorithmException.php',
+        'PragmaRX\\Google2FA\\Exceptions\\InvalidCharactersException' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/InvalidCharactersException.php',
+        'PragmaRX\\Google2FA\\Exceptions\\SecretKeyTooShortException' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Exceptions/SecretKeyTooShortException.php',
+        'PragmaRX\\Google2FA\\Google2FA' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Google2FA.php',
+        'PragmaRX\\Google2FA\\Support\\Base32' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Support/Base32.php',
+        'PragmaRX\\Google2FA\\Support\\Constants' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Support/Constants.php',
+        'PragmaRX\\Google2FA\\Support\\QRCode' => __DIR__ . '/..' . '/pragmarx/google2fa/src/Support/QRCode.php',
         'Psr\\Clock\\ClockInterface' => __DIR__ . '/..' . '/psr/clock/src/ClockInterface.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
@@ -5535,6 +5631,41 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\Permission\\Commands\\CacheReset' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CacheReset.php',
+        'Spatie\\Permission\\Commands\\CreatePermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
+        'Spatie\\Permission\\Commands\\CreateRole' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreateRole.php',
+        'Spatie\\Permission\\Commands\\Show' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/Show.php',
+        'Spatie\\Permission\\Commands\\UpgradeForTeams' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/UpgradeForTeams.php',
+        'Spatie\\Permission\\Contracts\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Permission.php',
+        'Spatie\\Permission\\Contracts\\PermissionsTeamResolver' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/PermissionsTeamResolver.php',
+        'Spatie\\Permission\\Contracts\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Role.php',
+        'Spatie\\Permission\\Contracts\\Wildcard' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Wildcard.php',
+        'Spatie\\Permission\\DefaultTeamResolver' => __DIR__ . '/..' . '/spatie/laravel-permission/src/DefaultTeamResolver.php',
+        'Spatie\\Permission\\Events\\PermissionAttached' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Events/PermissionAttached.php',
+        'Spatie\\Permission\\Events\\PermissionDetached' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Events/PermissionDetached.php',
+        'Spatie\\Permission\\Events\\RoleAttached' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Events/RoleAttached.php',
+        'Spatie\\Permission\\Events\\RoleDetached' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Events/RoleDetached.php',
+        'Spatie\\Permission\\Exceptions\\GuardDoesNotMatch' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/GuardDoesNotMatch.php',
+        'Spatie\\Permission\\Exceptions\\PermissionAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionAlreadyExists.php',
+        'Spatie\\Permission\\Exceptions\\PermissionDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionDoesNotExist.php',
+        'Spatie\\Permission\\Exceptions\\RoleAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleAlreadyExists.php',
+        'Spatie\\Permission\\Exceptions\\RoleDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleDoesNotExist.php',
+        'Spatie\\Permission\\Exceptions\\UnauthorizedException' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/UnauthorizedException.php',
+        'Spatie\\Permission\\Exceptions\\WildcardPermissionInvalidArgument' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/WildcardPermissionInvalidArgument.php',
+        'Spatie\\Permission\\Exceptions\\WildcardPermissionNotImplementsContract' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/WildcardPermissionNotImplementsContract.php',
+        'Spatie\\Permission\\Exceptions\\WildcardPermissionNotProperlyFormatted' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/WildcardPermissionNotProperlyFormatted.php',
+        'Spatie\\Permission\\Guard' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Guard.php',
+        'Spatie\\Permission\\Middleware\\PermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middleware/PermissionMiddleware.php',
+        'Spatie\\Permission\\Middleware\\RoleMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middleware/RoleMiddleware.php',
+        'Spatie\\Permission\\Middleware\\RoleOrPermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middleware/RoleOrPermissionMiddleware.php',
+        'Spatie\\Permission\\Models\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Permission.php',
+        'Spatie\\Permission\\Models\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Role.php',
+        'Spatie\\Permission\\PermissionRegistrar' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionRegistrar.php',
+        'Spatie\\Permission\\PermissionServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionServiceProvider.php',
+        'Spatie\\Permission\\Traits\\HasPermissions' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasPermissions.php',
+        'Spatie\\Permission\\Traits\\HasRoles' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasRoles.php',
+        'Spatie\\Permission\\Traits\\RefreshesPermissionCache' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/RefreshesPermissionCache.php',
+        'Spatie\\Permission\\WildcardPermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/WildcardPermission.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Clock\\Clock' => __DIR__ . '/..' . '/symfony/clock/Clock.php',
         'Symfony\\Component\\Clock\\ClockAwareTrait' => __DIR__ . '/..' . '/symfony/clock/ClockAwareTrait.php',
