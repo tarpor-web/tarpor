@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OTP Code</title>
+    <title>{{ $type === 'password-reset' ? 'Password Reset' : 'Verification' }} OTP</title>
 </head>
 <body>
-<h2>Your OTP Code</h2>
-<p>Your one-time password is: <strong>{{ $otp }}</strong></p>
-<p>This OTP will expire in 15 minutes.</p>
+<h1>{{ $type === 'password-reset' ? 'Password Reset' : 'Verification' }} OTP</h1>
+<p>Your OTP is: <strong>{{ $otp }}</strong></p>
+<p>This OTP is valid for 15 minutes.</p>
 </body>
 </html>

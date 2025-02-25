@@ -13,12 +13,14 @@ class SendOtp extends Mailable
 {
     use Queueable, SerializesModels;
     public $otp;
+    public $type;
     /**
      * Create a new message instance.
      */
-    public function __construct($otp)
+    public function __construct($otp, $type = 'verification')
     {
         $this->otp = $otp;
+        $this->type = $type;
     }
 
     /**
@@ -26,27 +28,46 @@ class SendOtp extends Mailable
      */
     public function envelope(): Envelope
     {
+        $subject = match($this->type) { // Now $this->type is defined
+            'password-reset' => 'Your Password Reset OTP',
+            'registration' => 'Your Account Verification OTP',
+            default => 'Your Login Verification OTP'
+        };
+
         return new Envelope(
-            subject: 'Send Otp',
+            subject: $subject,
         );
     }
 
-    public function build()
-    {
-        return $this->subject('Your OTP Code')
-            ->view('emails.otp')
-            ->with(['otp' => $this->otp]);
-    }
+//    public function build()
+//    {
+//        $subject = match($this->type) {
+//            'password-reset' => 'Your Password Reset OTP',
+//            'registration' => 'Your Account Verification OTP',
+//            default => 'Your Login Verification OTP'
+//        };
+//
+//        return $this->subject($subject)
+//            ->view('emails.otp')
+//            ->with([
+//                'otp' => $this->otp,
+//                'type' => $this->type
+//            ]);
+//    }
 
     /**
      * Get the message content definition.
      */
-//    public function content(): Content
-//    {
-//        return new Content(
-//            view: 'view.name',
-//        );
-//    }
+    public function content(): Content
+    {
+        return new Content(
+            view: 'emails.otp',
+            with: [
+                'otp' => $this->otp,
+                'type' => $this->type, // Now $this->type is defined
+            ],
+        );
+    }
 
     /**
      * Get the attachments for the message.

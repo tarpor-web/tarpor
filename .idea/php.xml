@@ -15,6 +15,16 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="073ab5ff-bfea-4e9f-9429-a2005b41fc0d" timeout="30000" />
+    </phpcs_settings>
+  </component>
+  <component name="PhpDebugIgnoredPathsSettings">
+    <skipped_paths>
+      <skipped_path path="$PROJECT_DIR$/vendor" />
+    </skipped_paths>
+  </component>
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nunomaduro/termwind" />
@@ -133,16 +143,38 @@
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa-laravel" />
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa-qrcode" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="073ab5ff-bfea-4e9f-9429-a2005b41fc0d" timeout="60000" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpStepFilterConfiguration">
+    <skipped_functions>
+      <skipped_function name="" />
+      <skipped_function name="" />
+      <skipped_function name="" />
+    </skipped_functions>
   </component>
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
     </phpunit_settings>
+  </component>
+  <component name="Psalm">
+    <Psalm_settings>
+      <psalm_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="073ab5ff-bfea-4e9f-9429-a2005b41fc0d" timeout="60000" />
+    </Psalm_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />

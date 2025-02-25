@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'role' => \App\Http\Middleware\CheckRole::class,
             'verified' => \App\Http\Middleware\IsVerified::class,
+            'auto.logout' => \App\Http\Middleware\AutoLogout::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

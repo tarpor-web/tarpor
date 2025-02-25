@@ -25,7 +25,12 @@ class User extends Authenticatable
         'role',
         'otp_code',
         'otp_expires_at',
+        'last_otp_sent_at',
         'is_verified',
+        'password_reset_otp',
+        'password_reset_otp_expires_at',
+        'last_password_reset_otp_sent_at',
+
     ];
 
     /**
@@ -48,6 +53,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'otp_expires_at' => 'datetime',
+            'last_otp_sent_at' => 'datetime',
+            'last_password_reset_otp_sent_at' => 'datetime',
             'password' => 'hashed',
             'is_verified' => 'boolean',
         ];

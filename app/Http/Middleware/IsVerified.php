@@ -21,6 +21,7 @@ class IsVerified
                     'verify' => 'You need to verify your account first'
                 ]);
             }
+
         }
         return $next($request);
     }

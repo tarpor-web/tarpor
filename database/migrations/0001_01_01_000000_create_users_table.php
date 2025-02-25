@@ -15,13 +15,22 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('phone')->nullable()->unique();
             $table->string('password');
             $table->string('role')->default('user');
+
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('otp_code')->nullable();
             $table->timestamp('otp_expires_at')->nullable();
-            $table->string('phone_number')->nullable()->unique();
+            $table->timestamp('last_otp_sent_at')->nullable()->after('otp_expires_at');
+            $table->string('password_reset_otp')->nullable();
+            $table->timestamp('password_reset_otp_expires_at')->nullable();
+            $table->timestamp('last_password_reset_otp_sent_at')->nullable()->after('password_reset_otp_expires_at');
+
             $table->boolean('is_verified')->default(false);
+
+            $table->string('provider')->nullable(); // e.g., 'google', 'facebook'
+            $table->string('provider_id')->nullable(); // Unique ID from the provider
             $table->rememberToken();
             $table->timestamps();
         });

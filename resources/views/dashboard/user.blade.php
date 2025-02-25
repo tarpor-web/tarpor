@@ -8,6 +8,7 @@
                 Logout
             </button>
         </form>
+        <a href="{{ route('password.change.form') }}">Change Password</a>
         <h1>User Dashboard</h1>
         <p>Welcome User!</p>
     </div>
