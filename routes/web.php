@@ -53,15 +53,15 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
     // Dashboards
     Route::get('/super/dashboard', function () {
         return view('dashboard.super');
-    })->middleware('role:super');
+    })->middleware('role:super')->name('super.dashboard'); // Named route for super dashboard
 
     Route::get('/admin/dashboard', function () {
         return view('dashboard.admin');
-    })->middleware('role:admin');
+    })->middleware('role:admin')->name('admin.dashboard'); // Named route for admin dashboard
 
     Route::get('/dashboard', function () {
         return view('dashboard.user');
-    })->middleware('role:user');
+    })->middleware('role:user')->name('user.dashboard'); // Named route for user dashboard
 
     // Change Password
     Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('password.change.form');

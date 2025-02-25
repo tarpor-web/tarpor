@@ -83,13 +83,99 @@
 
 
             <!-- User Account Button (Desktop Only) -->
-            <div class="relative group hidden md:block">
-                <a href="/login" class="text-white hover:text-lime-500 relative" aria-label="User Account">
-                    <i class="fas fa-user"></i>
-                </a>
-                <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-black bg-lime-500 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="relative group hidden md:block" x-data="{ open: false }">
+                @auth
+                    <!-- User Account Button -->
+                    <button
+                        @click="open = !open"
+                        class="text-white hover:text-lime-500 relative focus:outline-none"
+                        aria-label="User Account"
+                    >
+                        <i class="fas fa-user"></i>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div
+                        x-show="open"
+                        @click.away="open = false"
+                        class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50"
+                        x-cloak
+                    >
+                        <!-- Dropdown Items -->
+                        <ul class="py-2">
+                            <!-- Dashboard -->
+                            <li>
+                                <a href="{{ route(Auth::user()->role == 'super' ? 'super.dashboard' : (Auth::user()->role == 'admin' ? 'admin.dashboard' : 'user.dashboard')) }}"
+                                   class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                    <i class="fa-regular fa-rectangle-list mr-2"></i> Dashboard
+                                </a>
+                            </li>
+
+
+                            <!-- Profile -->
+                            <li>
+                                <a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                    <i class="fas fa-user-circle mr-2"></i> Profile
+                                </a>
+                            </li>
+
+                            <!-- Orders -->
+                            <li>
+                                <a href="/orders" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                    <i class="fas fa-shopping-bag mr-2"></i> Orders
+                                </a>
+                            </li>
+
+                            <!-- Wishlist -->
+                            <li>
+                                <a href="/wishlist" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                    <i class="fas fa-heart mr-2"></i> Wishlist
+                                </a>
+                            </li>
+
+                            <!-- Settings -->
+                            <li>
+                                <a href="/settings" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                    <i class="fas fa-cog mr-2"></i> Settings
+                                </a>
+                            </li>
+
+                            <!-- Change Password -->
+                            <li>
+                                <a href="{{ route('password.change.form') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                    <i class="fa-solid fa-key mr-2"></i> Change Password
+                                </a>
+                            </li>
+
+                            <!-- Divider -->
+                            <li class="border-t border-gray-200"></li>
+
+                            <!-- Logout -->
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                        <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tooltip -->
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-black bg-lime-500 rounded opacity-0 group-hover:opacity-100 transition-opacity truncate">
+                        {{ Auth::user()->name }}
+                    </span>
+                @else
+                    <!-- Login Link (for guest users) -->
+                    <a href="{{ route('login') }}" class="text-white hover:text-lime-500 relative focus:outline-none">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <!-- Tooltip -->
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-black bg-lime-500 rounded opacity-0 group-hover:opacity-100 transition-opacity">
                         Account
                     </span>
+                @endauth
             </div>
 
         </div>

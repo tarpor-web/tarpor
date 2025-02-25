@@ -20,10 +20,17 @@
             </a>
         </li>
         <li class="text-center">
-            <a href="/customers/login" class="flex flex-col items-center text-white" aria-label="Account">
-                <i class="fas fa-user-circle text-sm hover:text-lime-500 transition-colors"></i>
-                <span class="text-xs transition-colors">Account</span>
-            </a>
+                @auth
+                    <a href="{{ route(Auth::user()->role == 'super' ? 'super.dashboard' : (Auth::user()->role == 'admin' ? 'admin.dashboard' : 'user.dashboard')) }}" class="flex flex-col items-center text-white" aria-label="Account">
+                        <i class="fas fa-user-circle text-sm hover:text-lime-500 transition-colors"></i>
+                         <span class="text-xs transition-colors truncate">{{Auth::user()->name}}</span>
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="flex flex-col items-center text-white" aria-label="Account">
+                        <i class="fas fa-user-circle text-sm hover:text-lime-500 transition-colors"></i>
+                        <span class="text-xs transition-colors">Account</span>
+                    </a>
+                @endauth
         </li>
     </ul>
 </nav>
