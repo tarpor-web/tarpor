@@ -59,11 +59,13 @@ class SocialLoginController extends Controller
 
         // Redirect based on user role
         if ($user->role === 'super') {
-            return redirect()->intended('/super/dashboard');
+            return redirect()->intended(route('super.dashboard'));
         } elseif ($user->role === 'admin') {
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->intended(route('admin.dashboard'));
+        } elseif ($user->role === 'user') {
+            return redirect()->intended(route('user.dashboard'));
         } else {
-            return redirect()->intended('/dashboard');
+            return redirect()->intended(route('login'));
         }
     }
 }

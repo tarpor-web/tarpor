@@ -25,7 +25,7 @@ class AuthController extends Controller
     {
         $credentials = $request->validate([
             'email' => 'required|email',
-            'password' => 'required:min:8',
+            'password' => 'required|min:8',
         ]);
 
         // Attempt to log in the user
@@ -145,13 +145,11 @@ class AuthController extends Controller
     // Redirect based on role
     protected function redirectTo()
     {
-        $role = Auth::user()->role;
-
-        return match($role) {
-            'super' => '/super/dashboard',
-            'admin' => '/admin/dashboard',
-            'user' => '/dashboard',
-            default => '/'
+        return match (Auth::user()->role) {
+            'super' => route('super.dashboard'),
+            'admin' => route('admin.dashboard'),
+            'user' => route('user.dashboard'),
+            default => route('login')
         };
     }
 

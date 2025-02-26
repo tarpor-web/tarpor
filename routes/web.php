@@ -13,6 +13,7 @@ Route::get('/guest/dashboard', function () {
     return view('dashboard.guest');
 })->middleware('role:guest');
 
+
 // Authentication Routes
 Route::middleware('guest')->group(function () {
     // Login
@@ -63,7 +64,7 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
         return view('dashboard.user');
     })->middleware('role:user')->name('user.dashboard'); // Named route for user dashboard
 
-    // Change Password
+    // Change PasswordS
     Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('password.change.form');
     Route::post('/change-password', [AuthController::class, 'changePassword'])->name('password.change');
 });

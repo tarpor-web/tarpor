@@ -105,7 +105,7 @@
                         <ul class="py-2">
                             <!-- Dashboard -->
                             <li>
-                                <a href="{{ route(Auth::user()->role == 'super' ? 'super.dashboard' : (Auth::user()->role == 'admin' ? 'admin.dashboard' : 'user.dashboard')) }}"
+                                <a href="{{ route(Auth::user()->role == 'super' ? 'super.dashboard' : (Auth::user()->role == 'admin' ? 'admin.dashboard' : (Auth::user()->role == 'user' ? 'user.dashboard' : 'login'))) }}"
                                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
                                     <i class="fa-regular fa-rectangle-list mr-2"></i> Dashboard
                                 </a>
