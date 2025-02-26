@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
 
 // Guest Dashboard (If truly for unauthenticated users)
 Route::get('/guest/dashboard', function () {
@@ -57,11 +58,11 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
     })->middleware('role:super')->name('super.dashboard'); // Named route for super dashboard
 
     Route::get('/admin/dashboard', function () {
-        return view('dashboard.admin');
+        return view('dashboard.admin.index');
     })->middleware('role:admin')->name('admin.dashboard'); // Named route for admin dashboard
 
     Route::get('/dashboard', function () {
-        return view('dashboard.user');
+        return view('dashboard.user.index');
     })->middleware('role:user')->name('user.dashboard'); // Named route for user dashboard
 
     // Change PasswordS

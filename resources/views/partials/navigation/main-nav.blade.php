@@ -92,6 +92,8 @@
                         aria-label="User Account"
                     >
                         <i class="fas fa-user"></i>
+                        <i class="fas fa-chevron-down ml-[0.5] text-xs transition-transform duration-200"
+                           :class="{ 'rotate-180': open }"></i>
                     </button>
 
                     <!-- Dropdown Menu -->
@@ -106,7 +108,7 @@
                             <!-- Dashboard -->
                             <li>
                                 <a href="{{ route(Auth::user()->role == 'super' ? 'super.dashboard' : (Auth::user()->role == 'admin' ? 'admin.dashboard' : (Auth::user()->role == 'user' ? 'user.dashboard' : 'login'))) }}"
-                                   class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                   class="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition">
                                     <i class="fa-regular fa-rectangle-list mr-2"></i> Dashboard
                                 </a>
                             </li>
@@ -114,35 +116,35 @@
 
                             <!-- Profile -->
                             <li>
-                                <a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                <a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition">
                                     <i class="fas fa-user-circle mr-2"></i> Profile
                                 </a>
                             </li>
 
                             <!-- Orders -->
                             <li>
-                                <a href="/orders" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                <a href="/orders" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition">
                                     <i class="fas fa-shopping-bag mr-2"></i> Orders
                                 </a>
                             </li>
 
                             <!-- Wishlist -->
                             <li>
-                                <a href="/wishlist" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                <a href="/wishlist" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition">
                                     <i class="fas fa-heart mr-2"></i> Wishlist
                                 </a>
                             </li>
 
                             <!-- Settings -->
                             <li>
-                                <a href="/settings" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                <a href="/settings" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition">
                                     <i class="fas fa-cog mr-2"></i> Settings
                                 </a>
                             </li>
 
                             <!-- Change Password -->
                             <li>
-                                <a href="{{ route('password.change.form') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                <a href="{{ route('password.change.form') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition">
                                     <i class="fa-solid fa-key mr-2"></i> Change Password
                                 </a>
                             </li>
@@ -154,7 +156,7 @@
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                    <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition">
                                         <i class="fas fa-sign-out-alt mr-2"></i> Logout
                                     </button>
                                 </form>
