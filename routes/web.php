@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SocialLoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +42,8 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/login/facebook', [SocialLoginController::class, 'redirectToFacebook'])->name('login.facebook');
     Route::get('/login/facebook/callback', [SocialLoginController::class, 'handleFacebookCallback']);
+
+    Route::get('/shop/{produtct_slug}/product', [ShopController::class, 'productDetails'])->name('product.view');
 });
 
 // OTP Verification (Authenticated but unverified users)
@@ -69,7 +73,18 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
     // Change PasswordS
     Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('password.change.form');
     Route::post('/change-password', [AuthController::class, 'changePassword'])->name('password.change');
+
+    // Product Routes (CRUD)
+    Route::prefix('product')->name('product.')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('index'); // Show all products
+        Route::get('create', [ProductController::class, 'create'])->name('create'); // Show product creation form
+        Route::post('store', [ProductController::class, 'store'])->name('store'); // Store new product
+        Route::get('{product}/edit', [ProductController::class, 'edit'])->name('edit'); // Show edit product form
+        Route::put('{product}', [ProductController::class, 'update'])->name('update'); // Update product
+        Route::delete('{product}', [ProductController::class, 'destroy'])->name('destroy'); // Delete product
+    });
 });
+
 
 Route::any('/{any}', function ($any) {
     Log::info('Empty request detected', ['path' => $any]);
