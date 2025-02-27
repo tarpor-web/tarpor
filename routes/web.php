@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SocialLoginController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -69,3 +70,9 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
     Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('password.change.form');
     Route::post('/change-password', [AuthController::class, 'changePassword'])->name('password.change');
 });
+
+Route::any('/{any}', function ($any) {
+    Log::info('Empty request detected', ['path' => $any]);
+    return response('Not Found', 404);
+})->where('any', '.*');
+

@@ -5,6 +5,11 @@
       <LaravelPintConfiguration tool_path="$PROJECT_DIR$/vendor/bin/pint" />
     </laravel_pint_settings>
   </component>
+  <component name="MessDetector">
+    <phpmd_settings>
+      <phpmd_by_interpreter asDefaultInterpreter="true" interpreter_id="073ab5ff-bfea-4e9f-9429-a2005b41fc0d" timeout="30000" />
+    </phpmd_settings>
+  </component>
   <component name="MessDetectorOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -20,11 +25,7 @@
       <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="073ab5ff-bfea-4e9f-9429-a2005b41fc0d" timeout="30000" />
     </phpcs_settings>
   </component>
-  <component name="PhpDebugIgnoredPathsSettings">
-    <skipped_paths>
-      <skipped_path path="$PROJECT_DIR$/vendor" />
-    </skipped_paths>
-  </component>
+  <component name="PhpDebugIgnoredPathsSettings" notify="false" />
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nunomaduro/termwind" />
@@ -148,6 +149,7 @@
       <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
       <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
       <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
