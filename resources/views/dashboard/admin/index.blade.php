@@ -1,4 +1,12 @@
 @extends('layouts.admin')
+@push('styles')
+    <style>
+        canvas {
+            height: 200px !important;
+            width: 100% !important;
+        }
+    </style>
+@endpush
 
 @section('content')
 <!-- Right Content -->

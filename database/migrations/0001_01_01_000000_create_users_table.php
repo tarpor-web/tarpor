@@ -22,10 +22,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('otp_code')->nullable();
             $table->timestamp('otp_expires_at')->nullable();
-            $table->timestamp('last_otp_sent_at')->nullable()->after('otp_expires_at');
+            $table->timestamp('last_otp_sent_at')->nullable();
             $table->string('password_reset_otp')->nullable();
             $table->timestamp('password_reset_otp_expires_at')->nullable();
-            $table->timestamp('last_password_reset_otp_sent_at')->nullable()->after('password_reset_otp_expires_at');
+            $table->timestamp('last_password_reset_otp_sent_at')->nullable();
 
             $table->boolean('is_verified')->default(false);
 
