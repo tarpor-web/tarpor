@@ -21,69 +21,79 @@ class UsersTableSeeder extends Seeder
 //            'role' => 'super'
 //        ]);
 
+
         $users = [
             [
-                'name' => 'Parvez Ahmed',
-                'email' => 'a@b.com',
+                'name' => 'Super Parvez',
+                'email' => 'super@tarpor.com',
                 'password' => Hash::make('password'),
                 'role' => 'super',
+                'is_verified' => true, // Add this line
             ],
             [
-                'name' => 'Jane Doe',
-                'email' => 'jane@example.com',
+                'name' => 'Admin Parvez',
+                'email' => 'admin@tarpor.com',
                 'password' => Hash::make('password'),
                 'role' => 'admin',
+                'is_verified' => true, // Add this line
             ],
             [
-                'name' => 'Alice Smith',
-                'email' => 'alice@example.com',
+                'name' => 'User Parvez',
+                'email' => 'user@tarpor.com',
                 'password' => Hash::make('password'),
                 'role' => 'user',
+                'is_verified' => true, // Add this line
             ],
             [
-                'name' => 'Bob Johnson',
-                'email' => 'bob@example.com',
+                'name' => 'Guest Parvez',
+                'email' => 'guest@tarpor.com',
                 'password' => Hash::make('password'),
                 'role' => 'guest',
+                'is_verified' => true, // Add this line
             ],
             [
                 'name' => 'Charlie Brown',
                 'email' => 'charlie@example.com',
                 'password' => Hash::make('password'),
                 'role' => 'user',
+                'is_verified' => true, // Add this line
             ],
             [
                 'name' => 'David Williams',
                 'email' => 'david@example.com',
                 'password' => Hash::make('password'),
                 'role' => 'admin',
+                'is_verified' => true, // Add this line
             ],
             [
                 'name' => 'Eva Green',
                 'email' => 'eva@example.com',
                 'password' => Hash::make('password'),
                 'role' => 'user',
+                'is_verified' => true, // Add this line
             ],
             [
                 'name' => 'Frank White',
                 'email' => 'frank@example.com',
                 'password' => Hash::make('password'),
                 'role' => 'super',
+                'is_verified' => true, // Add this line
             ],
             [
                 'name' => 'Grace Lee',
                 'email' => 'grace@example.com',
                 'password' => Hash::make('password'),
                 'role' => 'admin',
+                'is_verified' => true, // Add this line
             ],
             [
                 'name' => 'Henry Brown',
                 'email' => 'henry@example.com',
                 'password' => Hash::make('password'),
                 'role' => 'user',
+                'is_verified' => true, // Add this line
             ],
         ];
-
 
         foreach ($users as $user) {
             User::create($user);
