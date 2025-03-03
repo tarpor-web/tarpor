@@ -3,13 +3,13 @@
 
 @section('page-content')
 <!-- Right Side Content -->
-<div class="w-full h-full bg-gray-100 p-8 transition-all duration-300"
+<div class="w-full h-full bg-gray-100 p-2 md:p-8 transition-all duration-300"
      :class="{ 'md:ml-16': isSidebarCollapsed, 'md:ml-14': !isSidebarCollapsed }">
     <!-- Second Toggle Button on Right Side -->
-    <div class="flex items-center justify-between mb-6">
+    <div class="flex items-center justify-between mb-4 md:mb-6">
         <div class="flex justify-between items-center">
             <button @click="isSidebarCollapsed = !isSidebarCollapsed"
-                    class="p-2 rounded-lg hover:bg-teal-100 mr-4"
+                    class="p-2 rounded-lg hover:bg-teal-100 md:mr-4"
                     :class="{ 'hidden': !isSidebarCollapsed }">
                     <x-sidebar-toogle-right-icon />
             </button>
@@ -19,8 +19,8 @@
 
         <!-- Breadcrumb on the Right -->
         <div class="text-xs lg:text-sm text-gray-500 flex items-center">
-            <a href="{{ route('home') }}" class="hover:text-gray-700">Home</a>
-            <i class="fas fa-long-arrow-alt-right mx-2 lg:mt-1"></i>
+            <a href="{{ route('home') }}" class="hover:text-gray-700">Home</a>&nbsp; &rarr; &nbsp;
+{{--            <i class="fas fa-long-arrow-alt-right mx-2 lg:mt-1"></i>--}}
             <a href="#" class="hover:text-gray-700">My Profile</a>
         </div>
     </div>

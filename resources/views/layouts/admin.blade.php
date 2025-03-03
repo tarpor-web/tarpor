@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     @stack('styles')
 </head>
-<body class="bg-gray-100" x-data="{ isSidebarCollapsed: false, openSubmenu: null }">
-    <!-- Top Bar -->
-    <div class="fixed top-0 left-0 right-0 bg-gray-950 shadow-md z-50 h-16">
-        <div class="container mx-auto lg:px-4">
-            <div class="flex items-center justify-between px-4 sm:px-6 h-16 relative">
+<body class="bg-gray-100" x-data="{ isSidebarCollapsed: false, openNotifications: false, openProfileDropdown: false, openSubmenu: null }">
+<!-- Top Bar -->
+<div class="fixed top-0 left-0 right-0 bg-gray-950 shadow-md z-50 h-16">
+        <div class="w-full mx-auto md:mx-2">
+            <div class="flex items-center justify-between md:px-2 h-16 relative">
                 <!-- Logo (Left) -->
                 <div class="flex-shrink-0">
                     <img src="{{ asset('logos/logo.svg') }}" alt="Logo" class="h-auto lg:h-8 w-32 md:w-auto">
@@ -138,7 +138,7 @@
                     <div class="relative">
                         <button @click="openProfileDropdown = !openProfileDropdown" class="flex items-center text-gray-400 hover:text-white focus:outline-none">
                             <img src="{{ asset('logos/tblue.svg') }}" alt="Profile" class="h-8 w-8 rounded-full">
-                            <i class="fas fa-chevron-down lg:ml-2 text-xs"></i>
+                            <i class="fas fa-chevron-down lg:ml-1 text-xs"></i>
                         </button>
                         <!-- Profile Dropdown Menu -->
                         <div x-show="openProfileDropdown" @click.away="openProfileDropdown = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50 overflow-hidden">
@@ -177,231 +177,20 @@
     </div>
 
 <!-- Main Content -->
-<div class="flex flex-col w-full mx-auto md:flex-row min-h-full pt-16">
+<div class="flex flex-col w-full mx-auto md:flex-row min-h-full pt-16 over">
     <!-- Left Sidebar -->
-    <div class="fixed top-16 h-full bg-gradient-to-b from-gray-800 to-gray-900 shadow-md overflow-x-hidden overflow-y-auto transition-all duration-300 ease-in-out w-16"
-        :class="{ 'w-16': isSidebarCollapsed, 'w-64': !isSidebarCollapsed }"
-        x-data="{ openSubmenu: null, hasScrollbar: false }"
-        @click.away="openSubmenu = null"
-        x-init="hasScrollbar = $el.scrollHeight > $el.clientHeight"
-        style="height: calc(100vh - 4rem);"
-    >
-    <!-- Sidebar Menu -->
-        <ul class="space-y-2 p-0 md:p-2 text-sm" :class="{ 'text-sm': hasScrollbar }">
-            <!-- Dashboard -->
-            <li class="flex justify-between items-center">
-                <a href="http://localhost:8000/admin/dashboard" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-tachometer-alt text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Dashboard
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Dashboard
-            </span>
-                </a>
-                <button @click="isSidebarCollapsed = !isSidebarCollapsed; if (isSidebarCollapsed) { openSubmenu = null }"
-                        x-show="!isSidebarCollapsed"
-                        x-transition
-                        class="p-2 bg-lime-100 rounded-lg hover:bg-teal-100 m-1">
-            <span>
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Left Arrow -->
-                    <path d="M10 6L4 12L10 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4 12H20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- Three Bars -->
-                    <line x1="14" y1="7" x2="20" y2="7" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="14" y1="12" x2="20" y2="12" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="14" y1="17" x2="20" y2="17" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </span>
-                </button>
-            </li>
+    <div class="flex flex-col w-full mx-auto md:flex-row min-h-full" x-data="{ openSubmenu: null, isSidebarCollapsed: false }">
+        <!-- Left Side Navigation Bar -->
+        @include('partials.sidebars.admin-sidebar')
 
-            <!-- Products Dropdown -->
-            <li x-data="{ open: false }">
-                <button @click="open = !open; openSubmenu = openSubmenu === 'products' ? null : 'products'; isSidebarCollapsed = false" class="flex items-center p-2 w-full text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-box text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Products
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Products
-            </span>
-                    <i class="fas fa-chevron-down ml-auto text-gray-400 transition-transform duration-200 hidden" :class="{ 'rotate-180': openSubmenu === 'products', 'hidden': isSidebarCollapsed }"></i>
-                </button>
-                <ul x-show="openSubmenu === 'products'" class="pl-6 space-y-1" style="display: none;">
-                    <li>
-                        <a href="http://localhost:8000/product" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded transition-colors duration-200">
-                            <i class="fas fa-list text-gray-400"></i>
-                            <span :class="{ 'opacity-0 translate-x-[-10px]': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px]">
-                        All Products
-                    </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8000/product/create" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded transition-colors duration-200">
-                            <i class="fas fa-plus text-gray-400"></i>
-                            <span :class="{ 'opacity-0 translate-x-[-10px]': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px]">
-                        Add New Product
-                    </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <!-- Categories Dropdown -->
-            <li x-data="{ open: false }">
-                <button @click="open = !open; openSubmenu = openSubmenu === 'categories' ? null : 'categories'; isSidebarCollapsed = false" class="flex items-center p-2 w-full text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-th-large text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Categories
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Categories
-            </span>
-                    <i class="fas fa-chevron-down ml-auto text-gray-400 transition-transform duration-200 hidden" :class="{ 'rotate-180': openSubmenu === 'categories', 'hidden': isSidebarCollapsed }"></i>
-                </button>
-                <ul x-show="openSubmenu === 'categories'" class="pl-6 space-y-1" style="display: none;">
-                    <li>
-                        <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded transition-colors duration-200">
-                            <i class="fas fa-list text-gray-400"></i>
-                            <span :class="{ 'opacity-0 translate-x-[-10px]': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px]">
-                        All Categories
-                    </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded transition-colors duration-200">
-                            <i class="fas fa-plus text-gray-400"></i>
-                            <span :class="{ 'opacity-0 translate-x-[-10px]': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px]">
-                        Add New Category
-                    </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <!-- Orders -->
-            <li>
-                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-shopping-cart text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Orders
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Orders
-            </span>
-                </a>
-            </li>
-
-            <!-- Customers -->
-            <li>
-                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-users text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Customers
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Customers
-            </span>
-                </a>
-            </li>
-
-            <!-- Coupons Dropdown -->
-            <li x-data="{ open: false }">
-                <button @click="open = !open; openSubmenu = openSubmenu === 'coupons' ? null : 'coupons'; isSidebarCollapsed = false" class="flex items-center p-2 w-full text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-ticket-alt text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Coupons
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Coupons
-            </span>
-                    <i class="fas fa-chevron-down ml-auto text-gray-400 transition-transform duration-200 hidden" :class="{ 'rotate-180': openSubmenu === 'coupons', 'hidden': isSidebarCollapsed }"></i>
-                </button>
-                <ul x-show="openSubmenu === 'coupons'" class="pl-6 space-y-1" style="display: none;">
-                    <li>
-                        <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded transition-colors duration-200">
-                            <i class="fas fa-list text-gray-400"></i>
-                            <span :class="{ 'opacity-0 translate-x-[-10px]': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px]">
-                        All Coupons
-                    </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded transition-colors duration-200">
-                            <i class="fas fa-plus text-gray-400"></i>
-                            <span :class="{ 'opacity-0 translate-x-[-10px]': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px]">
-                        Add New Coupon
-                    </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <!-- Reports -->
-            <li>
-                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-chart-line text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Reports
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Reports
-            </span>
-                </a>
-            </li>
-
-            <!-- Settings -->
-            <li>
-                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative">
-                    <i class="fas fa-cog text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                Settings
-            </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Settings
-            </span>
-                </a>
-            </li>
-
-            <!-- Logout -->
-            <li>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-
-                <a href="#" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded-lg transition-colors duration-200 group relative"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt text-gray-400"></i>
-                    <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">
-                        Logout
-                    </span>
-                    <!-- Tooltip -->
-                    <span x-show="isSidebarCollapsed" class="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
-                Logout
-            </span>
-                </a>
-            </li>
-        </ul>
+    <!-- Right Side Content -->
+    @yield('page-content')
     </div>
-
-    <!-- Right Content -->
-    @yield('content')
 </div>
 <!-- Footer -->
-<footer class="bg-gray-950 text-white transition-all duration-300 mt-auto"
-        :class="{ 'ml-16': isSidebarCollapsed, 'ml-8 lg:ml-64': !isSidebarCollapsed }">
-    <div class="container px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<footer class="bg-gray-950 text-white w-full overflow-hidden">
+    <div class="mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- About Section -->
             <div>
                 <img src="{{ asset('logos/logo.svg') }}" alt="TARPOR Logo" class="h-8 mb-4">
@@ -411,7 +200,7 @@
             </div>
 
             <!-- Quick Links -->
-            <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                 <div>
                     <h3 class="text-gray-300 uppercase font-semibold mb-3">Company</h3>
                     <ul class="space-y-2 text-sm">
@@ -441,7 +230,7 @@
             <!-- Social Media -->
             <div class="flex flex-col md:items-end">
                 <h3 class="text-gray-300 uppercase font-semibold mb-3">Follow Us</h3>
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 flex-wrap">
                     <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-blue-500 transition-colors">
                         <i class="fab fa-facebook-f"></i>
                     </a>
@@ -471,6 +260,7 @@
         </div>
     </div>
 </footer>
+
 
     @include('partials.toast')
     @stack('scripts')

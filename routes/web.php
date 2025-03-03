@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SocialLoginController;
@@ -67,9 +66,9 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
         return view('dashboard.admin.index');
     })->middleware('role:admin')->name('admin.dashboard'); // Named route for admin dashboard
 
-    Route::get('/dashboard', [DashboardController::class, 'userDashboard'])
-        ->middleware('role:user')
-        ->name('user.dashboard');  // Named route for user dashboard
+    Route::get('/dashboard', function () {
+        return view('dashboard.user.index');
+    })->middleware('role:user')->name('user.dashboard'); // Named route for user dashboard
 
     // Change PasswordS
     Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('password.change.form');
