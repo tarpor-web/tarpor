@@ -37,7 +37,7 @@
 
 <!-- Navbar Menu Container -->
 <nav class="bg-gray-950 text-white">
-    <div class="container mx-auto px-4 pb-2 flex justify-between items-center">
+    <div class="hidden lg:flex justify-between items-center container mx-auto px-4 pb-2">
         <!-- Desktop Menu -->
         <ul id="desktop-menu" class="hidden lg:flex space-x-6">
             <li class="relative">
