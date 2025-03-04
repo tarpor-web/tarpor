@@ -1,10 +1,17 @@
 @extends('layouts.admin')
 
-@section('content')
-    <div class="container mx-auto p-6">
+@section('page-content')
+    <div class="w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
         <!-- Breadcrumbs -->
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl ml-72 font-semibold text-gray-800">Product List</h2>
+            <div class="flex justify-between items-center">
+                <button @click="isSidebarCollapsed = !isSidebarCollapsed"
+                        class="p-2 rounded-lg hover:bg-teal-100 mr-1 md:mr-4"
+                        :class="{ 'hidden': !isSidebarCollapsed }">
+                    <x-sidebar-toogle-right-icon />
+                </button>
+                <h2 class="text-2xl font-semibold text-gray-800">Product List</h2>
+            </div>
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -23,7 +30,7 @@
         </div>
 
         <!-- Product Table -->
-        <div class="bg-white shadow-lg rounded-lg pl-72 overflow-hidden">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <div class="p-4">
                 <!-- Search and Filters -->
                 <div class="flex justify-between items-center mb-4">

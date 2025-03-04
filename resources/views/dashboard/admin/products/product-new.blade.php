@@ -2,11 +2,22 @@
 
 @section('title', 'Add Product | ' . strtoupper(config('app.name')))
 
-@section('content')
-    <div class="container mx-auto p-6">
-        <!-- Breadcrumbs -->
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="ml-72 text-2xl font-semibold text-gray-800">Create New Product</h2>
+@section('page-content')
+    <div class="w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
+    <!-- Breadcrumbs -->
+        <div class="flex justify-between items-center mb-6"
+             :class="
+                'ml-0 sm:ml-4 md:ml-8 lg:ml-12 2xl:ml-72': isSidebarCollapsed,
+                 'ml-0 sm:ml-4 md:ml-8 lg:ml-12 2xl:ml-56': !isSidebarCollapsed
+                 }">
+            <div class="flex justify-between items-center">
+                <button @click="isSidebarCollapsed = !isSidebarCollapsed"
+                        class="p-2 rounded-lg hover:bg-teal-100 mr-1 md:mr-4"
+                        :class="{ 'hidden': !isSidebarCollapsed}">
+                    <x-sidebar-toogle-right-icon />
+                </button>
+                <h2 class="text-2xl font-semibold text-gray-800">Create New Product</h2>
+            </div>
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
@@ -25,7 +36,7 @@
         </div>
 
         <!-- Form Container -->
-        <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-8">
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">

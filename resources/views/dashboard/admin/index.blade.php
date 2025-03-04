@@ -26,8 +26,10 @@
 
             <!-- Breadcrumb on the Right -->
             <div class="text-xs lg:text-sm text-gray-500 flex items-center">
-                <a href="{{ route('home') }}" class="hover:text-gray-700">Home</a> &nbsp; &rarr; &nbsp;
-{{--                <i class="fas fa-long-arrow-alt-right mx-2 lg:mt-1"></i>--}}
+                <a href="{{ route('admin.dashboard') }}" class="text-sm text-gray-700 hover:text-blue-600">Dashboard</a>
+                <svg class="w-3 h-3 mx-1 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
                 <a href="{{ route('admin.dashboard') }}" class="text-gray-700">Dashboard</a>
             </div>
         </div>
