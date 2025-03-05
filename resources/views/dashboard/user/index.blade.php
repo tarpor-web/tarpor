@@ -11,7 +11,7 @@
             <button @click="isSidebarCollapsed = !isSidebarCollapsed"
                     class="p-2 rounded-lg hover:bg-teal-100 md:mr-4"
                     :class="{ 'hidden': !isSidebarCollapsed }">
-                    <x-sidebar-toogle-right-icon />
+                    <x-sidebar.sidebar-toogle-right-icon />
             </button>
             <!-- Title on the Left -->
             <h1 class="text-lg lg:text-3xl font-bold text-gray-800">My Profile</h1>

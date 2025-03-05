@@ -31,7 +31,7 @@
                      [
                          'title' => 'All Categories',
                          'icon' => 'list',
-                         'route' => '#'
+                         'route' => route('category.index')
                      ],
                      [
                          'title' => 'Add New Category',
@@ -107,7 +107,7 @@
                 x-show="!isSidebarCollapsed"
                 x-transition
                 class="p-2 rounded-lg hover:bg-amber-100 mx-2">
-            <x-sidebar-toggle-left-icon />
+            <x-sidebar.sidebar-toggle-left-icon />
         </button>
     </div>
 

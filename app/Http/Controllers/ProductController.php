@@ -29,6 +29,61 @@ class ProductController extends Controller
         ]);
     }
 
+    public function checkSlug(Request $request)
+    {
+        if (!$request->has('slug')) {
+            return response()->json(['error' => 'Slug parameter is missing'], 400);
+        }
+
+        $request->validate(['slug' => 'required|string']);
+
+        $slug = $request->query('slug');
+
+        if (empty($slug)) {
+            return response()->json(['error' => 'Slug is empty'], 400);
+        }
+        $originalSlug = $slug;
+        $counter = 1;
+
+        while (Product::where('slug', $slug)->exists()) {
+            $slug = "{$originalSlug}-{$counter}";
+            $counter++;
+        }
+
+        return response()->json([
+            'exists' => $counter > 1,
+            'suggested' => $slug
+        ]);
+    }
+    public function generateSku(Request $request)
+    {
+        $request->validate([
+            'category_ids' => 'required|array',
+            'category_ids.*' => 'integer',
+        ]);
+
+        // Convert category IDs to a 3-digit padded string
+        $skuPrefix = collect($request->category_ids)
+            ->map(fn($id) => str_pad($id, 3, '0', STR_PAD_LEFT))
+            ->implode('.');
+
+        // Get the last product in this category hierarchy
+        $lastProduct = Product::where('sku', 'LIKE', "{$skuPrefix}.%")
+            ->orderBy('sku', 'desc')
+            ->first();
+
+        // Extract last number and increment
+        $lastNumber = $lastProduct ? (int)substr($lastProduct->sku, strrpos($lastProduct->sku, '.') + 1) : 0;
+        $newNumber = str_pad($lastNumber + 1, 3, '0', STR_PAD_LEFT);
+
+        // Generate new SKU
+        $newSku = "{$skuPrefix}.{$newNumber}";
+
+        return response()->json(['sku' => $newSku]);
+    }
+
+
+
     /**
      * Store a newly created product in the database.
      *

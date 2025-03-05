@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OtpVerificationSuccess;
 use App\Mail\PasswordResetSuccess;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -63,36 +64,6 @@ class AuthController extends Controller
         return redirect('/'); // Redirect to the homepage
     }
 
-    // Generate and send OTP
-//    public function sendOtp(Request $request)
-//    {
-//        $request->validate([
-//            'email' => 'required|email|exists:users,email'
-//        ]);
-//
-//        $user = User::where('email', $request->email)->firstOrFail();
-//
-//        // Check if user exists and not a guest
-//        if ($user->role === 'guest') {
-//            return back()->with('error', 'Invalid email address');
-//        }
-//
-//        // Generate OTP
-//        $otp = random_int(100000, 999999);
-//        $user->update([
-//            'otp_code' => Hash::make($otp),
-//            'otp_expires_at' => now()->addMinutes(15),
-//            'last_otp_sent_at' => now(),
-//        ]);
-//
-//        // Send OTP via email
-//        Mail::to($user->email)->queue(new SendOtp($otp));
-//
-//        return redirect()->route('verify.otp.form')->with([
-//            'email' => $user->email,
-//            'success' => 'OTP sent to your email!'
-//        ]);
-//    }
 
     // Show OTP verification form
     public function showVerifyOtpForm(Request $request)
@@ -133,10 +104,14 @@ class AuthController extends Controller
                 'is_verified' => true,
             ]);
 
+            // Send OTP verification success email
+            Mail::to($user->email)->send(new OtpVerificationSuccess($user));
+
             // Clear the OTP email from the session
             $request->session()->forget('otp_email');
 
-            return redirect()->intended($this->redirectTo());
+            return redirect()->intended($this->redirectTo())
+                ->with('success', 'Your account has been successfully verified. Welcome back!');
         }
 
         return back()->with('error', 'Invalid OTP or OTP expired');

@@ -19,7 +19,7 @@ class Category extends Model
      */
     public function parent(): BelongsTo
     {
-        return $this->belongsTo(Category::class, 'parent_id');
+        return $this->belongsTo(__CLASS__, 'parent_id');
     }
 
     /**
@@ -27,7 +27,7 @@ class Category extends Model
      */
     public function children(): HasMany
     {
-        return $this->hasMany(Category::class, 'parent_id');
+        return $this->hasMany(__CLASS__, 'parent_id');
     }
 
     /**
@@ -44,5 +44,17 @@ class Category extends Model
     public function seo()
     {
         return $this->morphOne(SeoMeta::class, 'entity');
+    }
+    public function totalProducts()
+    {
+        // Sum of products directly associated with this category
+        $productsCount = $this->products->count();
+
+        // Recursively sum products from all children
+        foreach ($this->children as $child) {
+            $productsCount += $child->totalProducts();
+        }
+
+        return $productsCount;
     }
 }

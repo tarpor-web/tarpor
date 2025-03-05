@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SocialLoginController;
@@ -74,6 +75,11 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
     Route::get('/change-password', [AuthController::class, 'showChangePasswordForm'])->name('password.change.form');
     Route::post('/change-password', [AuthController::class, 'changePassword'])->name('password.change');
 
+    // API calls
+    Route::get('/slug-check', [ProductController::class, 'checkSlug'])->name('api.slug.check');
+    Route::get('/generate-sku', [ProductController::class, 'generateSku'])->name('api.sku.generate');
+
+
     // Product Routes (CRUD)
     Route::prefix('product')->name('product.')->group(function () {
         Route::get('/', [ProductController::class, 'index'])->name('index'); // Show all products
@@ -83,6 +89,15 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
         Route::put('{product}', [ProductController::class, 'update'])->name('update'); // Update product
         Route::delete('{product}', [ProductController::class, 'destroy'])->name('destroy'); // Delete product
     });
+
+    // Categories
+    Route::prefix('category')->name('category.')->group(function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::get('create', [CategoryController::class, 'create'])->name('create');
+        Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('edit');
+        Route::delete('{category}', [CategoryController::class, 'destroy'])->name('destroy');
+    });
+
 });
 
 

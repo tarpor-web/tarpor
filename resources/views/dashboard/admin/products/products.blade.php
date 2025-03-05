@@ -8,7 +8,7 @@
                 <button @click="isSidebarCollapsed = !isSidebarCollapsed"
                         class="p-2 rounded-lg hover:bg-teal-100 mr-1 md:mr-4"
                         :class="{ 'hidden': !isSidebarCollapsed }">
-                    <x-sidebar-toogle-right-icon />
+                    <x-sidebar.sidebar-toogle-right-icon />
                 </button>
                 <h2 class="text-2xl font-semibold text-gray-800">Product List</h2>
             </div>
