@@ -12,22 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('seo_metas', function (Blueprint $table) {
-            $table->id(); // Primary key
-            $table->string('entity_type', 50); // Entity type (e.g., product, category)
-            $table->unsignedBigInteger('entity_id'); // Entity ID
-            $table->string('meta_title', 255); // Meta title
-            $table->text('meta_description'); // Meta description
-            $table->text('meta_keywords')->nullable(); // Meta keywords
-            $table->string('canonical_url', 255)->nullable(); // Canonical URL
-            $table->string('og_title', 255)->nullable(); // Open Graph title
-            $table->text('og_description')->nullable(); // Open Graph description
-            $table->string('og_image', 255)->nullable(); // Open Graph image
-            $table->string('twitter_title', 255)->nullable(); // Twitter title
-            $table->text('twitter_description')->nullable(); // Twitter description
-            $table->string('twitter_image', 255)->nullable(); // Twitter image
-            $table->json('schema_markup')->nullable(); // JSON-LD schema markup
-            $table->string('robots', 255)->default('index, follow'); // Robots meta tag
-            $table->timestamps(); // created_at and updated_at
+            $table->id();
+            $table->string('meta_title');
+            $table->text('meta_description')->nullable();
+            $table->text('meta_keywords')->nullable();
+            $table->string('canonical_url')->nullable();
+            $table->string('og_title')->nullable();
+            $table->text('og_description')->nullable();
+            $table->string('og_image')->nullable();
+            $table->string('twitter_title')->nullable();
+            $table->text('twitter_description')->nullable();
+            $table->string('twitter_image')->nullable();
+            $table->json('schema_markup')->nullable();
+            $table->string('robots')->nullable();
+            $table->string('entity_type'); // Polymorphic entity type (e.g., "App\Models\Product")
+            $table->unsignedBigInteger('entity_id'); // Polymorphic entity ID
+            $table->timestamps();
 
             // Indexes
             $table->index('entity_type'); // Index for entity_type

@@ -76,25 +76,29 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
     Route::post('/change-password', [AuthController::class, 'changePassword'])->name('password.change');
 
     // API calls
-    Route::get('/slug-check', [ProductController::class, 'checkSlug'])->name('api.slug.check');
+    Route::get('/product/slug/check', [ProductController::class, 'checkSlug'])->name('api.slug.check');
+    Route::get('/category/slug/check', [CategoryController::class, 'checkSlug'])->name('api.category.slug.check');
     Route::get('/generate-sku', [ProductController::class, 'generateSku'])->name('api.sku.generate');
 
 
     // Product Routes (CRUD)
     Route::prefix('product')->name('product.')->group(function () {
-        Route::get('/', [ProductController::class, 'index'])->name('index'); // Show all products
-        Route::get('create', [ProductController::class, 'create'])->name('create'); // Show product creation form
-        Route::post('store', [ProductController::class, 'store'])->name('store'); // Store new product
-        Route::get('{product}/edit', [ProductController::class, 'edit'])->name('edit'); // Show edit product form
-        Route::put('{product}', [ProductController::class, 'update'])->name('update'); // Update product
-        Route::delete('{product}', [ProductController::class, 'destroy'])->name('destroy'); // Delete product
+        Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::get('create', [ProductController::class, 'create'])->name('create');
+        Route::post('store', [ProductController::class, 'store'])->name('store');
+        Route::get('{product}/edit', [ProductController::class, 'edit'])->name('edit');
+        Route::put('{product}', [ProductController::class, 'update'])->name('update');
+        Route::delete('{product}', [ProductController::class, 'destroy'])->name('destroy');
+        Route::post('{product}/restore', [ProductController::class, 'restore'])->name('restore');
     });
 
     // Categories
     Route::prefix('category')->name('category.')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');
         Route::get('create', [CategoryController::class, 'create'])->name('create');
+        Route::post('store', [CategoryController::class, 'store'])->name('store');
         Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('edit');
+        Route::put('{category}', [CategoryController::class, 'update'])->name('update');
         Route::delete('{category}', [CategoryController::class, 'destroy'])->name('destroy');
     });
 

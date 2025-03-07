@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('page-content')
-    <div class="w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
+    <div class="max-w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
         <!-- Breadcrumbs -->
         <div class="flex justify-between items-center mb-6">
             <div class="flex justify-between items-center">
@@ -30,7 +30,7 @@
         </div>
 
         <!-- Product Table -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="w-full bg-white shadow-lg rounded-lg overflow-hidden">
             <div class="p-4">
                 <!-- Search and Filters -->
                 <div class="flex justify-between items-center mb-4">
@@ -52,107 +52,117 @@
                 </div>
 
                 <!-- Table -->
-                <div class="overflow-auto">
-                    <table id="productTable" class="min-w-full border-collapse border border-gray-300 divide-y divide-gray-200">
+                <div class="overflow-auto max-w-full">
+                    <table id="productTable" class="w-full border-collapse border border-gray-300 divide-y divide-gray-200">
                         <thead class="bg-lime-500 sticky top-0">
                         <tr>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(0)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(0)">
                                 <span id="nameSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Name
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(1)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(1)">
                                 <span id="skuSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> SKU
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(2)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(2)">
                                 <span id="priceSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Price
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(3)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(3)">
                                 <span id="salePriceSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Sale Price
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(4)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(4)">
                                 <span id="costPriceSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Cost Price
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(5)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(5)">
                                 <span id="stockSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Stock
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(5)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(6)">
                                 <span id="stockStatusSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Stock Status
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(6)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(7)">
                                 <span id="statusSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Status
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(7)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(8)">
                                 <span id="categorySortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Category
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(8)">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(9)">
                                 <span id="brandSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Brand
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(9)">
+                            <th scope="col" class="hidden px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(10)">
                                 <span id="barcodeSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Barcode
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(10)">
+                            <th scope="col" class="hidden px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(11)">
                                 <span id="weightSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Weight
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate cursor-pointer" onclick="sortTable(11)">
+                            <th scope="col" class="hidden px-4 py-3 text-left text-sm font-medium text-black cursor-pointer" onclick="sortTable(12)">
                                 <span id="dimensionsSortIcon" class="mr-1"><i class="fa-solid fa-sort-down"></i></span> Dimensions
                             </th>
-                            <th scope="col" class="pl-2 py-2 text-left text-sm font-medium tracking-wider truncate">
+                            <th scope="col" class="px-4 py-3 text-left text-sm font-medium text-black">
                                 Actions
                             </th>
                         </tr>
                         </thead>
                         <tbody class="bg-teal-100 divide-y divide-gray-200">
                         @foreach($products as $product)
-                            <tr class="odd:bg-gray-50  hover:bg-amber-50 transition">
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{ $product->name }}</div>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="border border-gray-300 px-2 py-1 whitespace-nowrap max-w-48">
+                                    <div class="text-sm text-gray-900 truncate">{{ $product->name }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="border border-gray-300 px-2 py-1 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{ $product->sku }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">${{ number_format($product->price, 2) }}</div>
+                                <td class="border border-gray-300 px-2 py-1 text-right whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ format_taka($product->price) }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">${{ number_format($product->sale_price, 2) }}</div>
+                                <td class="border border-gray-300 px-2 py-1 text-right whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ format_taka($product->sale_price) }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">${{ number_format($product->cost_price, 2) }}</div>
+                                <td class="border border-gray-300 px-2 py-1 text-right whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ format_taka($product->cost_price) }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="border border-gray-300 px-2 py-1 text-right whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{ $product->stock_quantity }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="border border-gray-300 px-2 py-1 whitespace-nowrap">
                                     <span class="px-2 py-1 text-sm font-semibold rounded-full
                                         {{ $product->stock_status === 'in_stock' ? 'bg-green-100 text-green-800' :
                                            ($product->stock_status === 'out_of_stock' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800') }}">
                                         {{ ucfirst($product->stock_status) }}
                                     </span>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 py-1 text-sm font-semibold rounded-full
-                                {{ $product->status === 'published' ? 'bg-green-100 text-green-800' :
-                                   ($product->status === 'draft' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800') }}">
-                                {{ ucfirst($product->status) }}
-                            </span>
+                                <td class="border border-gray-300 px-2 py-1 whitespace-nowrap">
+                                    <span class="px-2 py-1 text-sm font-semibold rounded-full
+                                        {{ $product->status === 'published' ? 'bg-green-100 text-green-800' :
+                                           ($product->status === 'draft' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800') }}">
+                                        {{ ucfirst($product->status) }}
+                                    </span>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{ $product->category->name ?? 'N/A' }}</div>
+                                <td class="border border-gray-300 px-2 py-1 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">
+                                        @if ($product->categories->isNotEmpty())
+                                            <ul class="list-inside">
+                                                @foreach ($product->categories as $category)
+                                                    <li>{{ $category->name }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @else
+                                            N/A
+                                        @endif
+                                    </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="border border-gray-300 px-2 py-1 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{ $product->brand->name ?? 'N/A' }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="hidden border border-gray-300 px-2 py-1 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{ $product->barcode ?? 'N/A' }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="hidden border border-gray-300 px-2 py-1 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">{{ $product->weight ? $product->weight . ' kg' : 'N/A' }}</div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
+                                <td class="hidden border border-gray-300 px-2 py-1 whitespace-nowrap">
                                     <div class="text-sm text-gray-900">
                                         {{ $product->length ? $product->length . 'x' . $product->width . 'x' . $product->height . ' cm' : 'N/A' }}
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <td class="border border-gray-300 px-2 py-1 whitespace-nowrap text-sm font-medium">
                                     <div class="flex space-x-4">
                                         <a href="{{ route('product.edit', $product->id) }}" class="text-blue-500 hover:text-blue-700">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -180,87 +190,88 @@
                         @endforeach
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
     </div>
+@endsection
 
-        <!-- JavaScript for Sorting and Filtering -->
-        <script>
-            // Sorting Functionality
-            function sortTable(columnIndex) {
-                const table = document.getElementById('productTable');
-                const rows = Array.from(table.querySelectorAll('tbody tr'));
-                const header = table.querySelector(`th:nth-child(${columnIndex + 1})`);
-                const icon = header.querySelector('i');
+@push('scripts')
+    <!-- JavaScript for Sorting and Filtering -->
+    <script>
+        // Sorting Functionality
+        function sortTable(columnIndex) {
+            const table = document.getElementById('productTable');
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
+            const header = table.querySelector(`th:nth-child(${columnIndex + 1})`);
+            const icon = header.querySelector('i');
 
-                // Toggle the sorting direction
-                const isAscending = header.classList.toggle('asc');
+            // Toggle the sorting direction
+            const isAscending = header.classList.toggle('asc');
 
-                // Change the icon based on the sorting direction
-                if (isAscending) {
-                    icon.classList.remove('fa-sort-down');
-                    icon.classList.add('fa-sort-up');
-                } else {
-                    icon.classList.remove('fa-sort-up');
-                    icon.classList.add('fa-sort-down');
-                }
-
-                // Sort the rows
-                rows.sort((a, b) => {
-                    const aValue = a.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
-                    const bValue = b.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
-                    return isAscending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
-                });
-
-                // Clear and re-append the sorted rows
-                table.querySelector('tbody').innerHTML = '';
-                rows.forEach(row => table.querySelector('tbody').appendChild(row));
+            // Change the icon based on the sorting direction
+            if (isAscending) {
+                icon.classList.remove('fa-sort-down');
+                icon.classList.add('fa-sort-up');
+            } else {
+                icon.classList.remove('fa-sort-up');
+                icon.classList.add('fa-sort-down');
             }
-            // Filtering Functionality
-            document.getElementById('searchInput').addEventListener('input', function() {
-                const searchValue = this.value.toLowerCase();
-                const rows = document.querySelectorAll('#productTable tbody tr');
 
-                rows.forEach(row => {
-                    const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
-                    const sku = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-                    if (name.includes(searchValue) || sku.includes(searchValue)) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
+            // Sort the rows
+            rows.sort((a, b) => {
+                const aValue = a.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
+                const bValue = b.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
+                return isAscending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
             });
 
-            document.getElementById('statusFilter').addEventListener('change', function() {
-                const statusValue = this.value;
-                const rows = document.querySelectorAll('#productTable tbody tr');
+            // Clear and re-append the sorted rows
+            table.querySelector('tbody').innerHTML = '';
+            rows.forEach(row => table.querySelector('tbody').appendChild(row));
+        }
 
-                rows.forEach(row => {
-                    const status = row.querySelector('td:nth-child(8)').textContent.toLowerCase().trim();
-                    if (!statusValue || status === statusValue) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
+        // Filtering Functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#productTable tbody tr');
+
+            rows.forEach(row => {
+                const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+                const sku = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                if (name.includes(searchValue) || sku.includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
             });
+        });
 
-            document.getElementById('stockFilter').addEventListener('change', function() {
-                const stockValue = this.value;
-                const rows = document.querySelectorAll('#productTable tbody tr');
+        document.getElementById('statusFilter').addEventListener('change', function() {
+            const statusValue = this.value;
+            const rows = document.querySelectorAll('#productTable tbody tr');
 
-                rows.forEach(row => {
-                    const stock = row.querySelector('td:nth-child(7)').textContent.toLowerCase().trim();
-                    if (!stockValue || stock === stockValue) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
+            rows.forEach(row => {
+                const status = row.querySelector('td:nth-child(8)').textContent.toLowerCase().trim();
+                if (!statusValue || status === statusValue) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
             });
-        </script>
-    @endsection
+        });
 
+        document.getElementById('stockFilter').addEventListener('change', function() {
+            const stockValue = this.value;
+            const rows = document.querySelectorAll('#productTable tbody tr');
+
+            rows.forEach(row => {
+                const stock = row.querySelector('td:nth-child(7)').textContent.toLowerCase().trim();
+                if (!stockValue || stock === stockValue) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+@endpush

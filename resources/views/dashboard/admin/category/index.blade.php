@@ -1,4 +1,12 @@
 @extends('layouts.admin')
+@push('styles')
+    <style>
+        .tree-children {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+    </style>
+@endpush
 
 @section('page-content')
     <div class="w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
@@ -40,7 +48,7 @@
                         </a>
                     </div>
 
-                    <div class="overflow-auto">
+                    <div class="overflow-auto max-h-screen">
                         <table class="min-w-full border-collapse border border-gray-300 divide-y divide-gray-200">
                             <thead class="bg-lime-500 sticky top-0">
                             <tr>
@@ -91,8 +99,8 @@
             </div>
 
             <!-- Category Tree Visualization -->
-            <div class="w-1/2 bg-white shadow-lg rounded-lg overflow-hidden p-6">
-                <h3 class="text-lg font-semibold mb-4">Category Hierarchy</h3>
+            <div class="w-1/2 bg-lime-100 shadow-lg rounded-lg overflow-hidden p-6">
+                <h3 class="text-lg font-semibold mb-4 text-gray-800">Category Hierarchy</h3>
                 <div class="tree-container space-y-2">
                     @foreach($tree as $category)
                         @include('dashboard.admin.category.partials.tree-node', [
@@ -104,14 +112,8 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .tree-children {
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-    </style>
-
+@endsection
+@push('scripts')
     <script>
         function toggleChildren(element) {
             const children = element.nextElementSibling;
@@ -127,4 +129,4 @@
             }
         }
     </script>
-@endsection
+@endpush

@@ -2,6 +2,8 @@
 
 @section('title', 'Add Product | ' . strtoupper(config('app.name')))
 
+
+
 @section('page-content')
     <div class="w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
         <!-- Breadcrumbs -->
@@ -59,12 +61,22 @@
                         :options="$brands->pluck('name', 'id')"
                     />
 
-                    <x-form.select
-                        name="category_id"
+{{--                    <x-form.select--}}
+{{--                        name="category_id"--}}
+{{--                        label="Category"--}}
+{{--                        :options="$categories->pluck('name', 'id')"--}}
+{{--                        required--}}
+{{--                    />--}}
+
+                    <x-form.category-tree
+                        name="category_ids"
                         label="Category"
-                        :options="$categories->pluck('name', 'id')"
+                        :categories="$categories"
+                        :selected="old([])"
                         required
                     />
+
+
 
                     <!-- Attributes -->
                     <x-form.attributes
@@ -81,7 +93,7 @@
 
                     <!-- Status -->
                     <x-form.select
-                        name="product_status"
+                        name="status"
                         label="Listing Status"
                         :options="[
                                 'draft' => 'Unpublished',
@@ -148,5 +160,6 @@
             }
         });
     </script>
+
 
 @endpush

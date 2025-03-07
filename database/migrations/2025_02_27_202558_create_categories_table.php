@@ -22,6 +22,8 @@ return new class extends Migration
             $table->timestamps(); // created_at and updated_at
 
             $table->index('parent_id');
+            $table->index('name');
+            $table->index('slug');
         });
     }
 

@@ -3,7 +3,7 @@
              [
                  'title' => 'Dashboard',
                  'icon' => 'tachometer-alt',
-                 'route' => url('/admin/dashboard'),
+                 'route' => route('admin.dashboard'),
                  'submenu' => []
              ],
              [
@@ -14,12 +14,12 @@
                      [
                          'title' => 'All Products',
                          'icon' => 'list',
-                         'route' => url('/product')
+                         'route' => route('product.index')
                      ],
                      [
                          'title' => 'Add New Product',
                          'icon' => 'plus',
-                         'route' => url('/product/create')
+                         'route' => route('product.create')
                      ]
                  ]
              ],
@@ -36,8 +36,7 @@
                      [
                          'title' => 'Add New Category',
                          'icon' => 'plus',
-                         'route' => '#'
-                     ]
+                         'route' => route('category.create')                     ]
                  ]
              ],
              [
@@ -84,7 +83,7 @@
              [
                  'title' => 'Logout',
                  'icon' => 'sign-out-alt',
-                 'route' => '/logout',
+                 'route' => route('logout'),
                  'submenu' => [],
                  'logout' => true // Add a flag for logout
              ]
@@ -119,7 +118,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-                <a href="#" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-lg group relative"
+                <a href="{{ route('logout') }}" class="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-lg group relative"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="fas fa-{{ $item['icon'] }} mr-2"></i>
                     <span :class="{ 'opacity-0 translate-x-[-10px] w-0 overflow-hidden': isSidebarCollapsed, 'opacity-100 translate-x-0': !isSidebarCollapsed }" class="ml-4 lg:ml-2 transition-all duration-300 ease-in-out opacity-0 translate-x-[-10px] w-0 overflow-hidden">

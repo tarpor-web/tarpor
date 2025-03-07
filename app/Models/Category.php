@@ -25,19 +25,23 @@ class Category extends Model
     /**
      * Get the child categories.
      */
+//    public function children(): HasMany
+//    {
+//        return $this->hasMany(__CLASS__, 'parent_id');
+//    }
+
     public function children(): HasMany
     {
-        return $this->hasMany(__CLASS__, 'parent_id');
+        return $this->hasMany(__CLASS__, 'parent_id')->with('children');
     }
 
     /**
      * Get the products in this category.
      */
-    public function products(): HasMany
+    public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsToMany(Product::class, 'category_product');
     }
-
     /**
      * Get the SEO metadata for this category.
      */
@@ -57,4 +61,5 @@ class Category extends Model
 
         return $productsCount;
     }
+
 }

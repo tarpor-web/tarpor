@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
+    'App\\Http\\Controllers\\CategoryController' => $baseDir . '/app/Http/Controllers/CategoryController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ProductController' => $baseDir . '/app/Http/Controllers/ProductController.php',
     'App\\Http\\Controllers\\ShopController' => $baseDir . '/app/Http/Controllers/ShopController.php',
@@ -14,6 +15,7 @@ return array(
     'App\\Http\\Middleware\\AutoLogout' => $baseDir . '/app/Http/Middleware/AutoLogout.php',
     'App\\Http\\Middleware\\CheckRole' => $baseDir . '/app/Http/Middleware/CheckRole.php',
     'App\\Http\\Middleware\\IsVerified' => $baseDir . '/app/Http/Middleware/IsVerified.php',
+    'App\\Mail\\OtpVerificationSuccess' => $baseDir . '/app/Mail/OtpVerificationSuccess.php',
     'App\\Mail\\PasswordResetSuccess' => $baseDir . '/app/Mail/PasswordResetSuccess.php',
     'App\\Mail\\SendOtp' => $baseDir . '/app/Mail/SendOtp.php',
     'App\\Models\\Brand' => $baseDir . '/app/Models/Brand.php',

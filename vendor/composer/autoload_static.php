@@ -41,6 +41,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
+        'f73cdc319cf50d9e1fa4ea3a928411a6' => __DIR__ . '/../..' . '/app/Helpers/CurrencyHelper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -577,6 +578,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
 
     public static $classMap = array (
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
+        'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
         'App\\Http\\Controllers\\ShopController' => __DIR__ . '/../..' . '/app/Http/Controllers/ShopController.php',
@@ -584,6 +586,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'App\\Http\\Middleware\\AutoLogout' => __DIR__ . '/../..' . '/app/Http/Middleware/AutoLogout.php',
         'App\\Http\\Middleware\\CheckRole' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckRole.php',
         'App\\Http\\Middleware\\IsVerified' => __DIR__ . '/../..' . '/app/Http/Middleware/IsVerified.php',
+        'App\\Mail\\OtpVerificationSuccess' => __DIR__ . '/../..' . '/app/Mail/OtpVerificationSuccess.php',
         'App\\Mail\\PasswordResetSuccess' => __DIR__ . '/../..' . '/app/Mail/PasswordResetSuccess.php',
         'App\\Mail\\SendOtp' => __DIR__ . '/../..' . '/app/Mail/SendOtp.php',
         'App\\Models\\Brand' => __DIR__ . '/../..' . '/app/Models/Brand.php',

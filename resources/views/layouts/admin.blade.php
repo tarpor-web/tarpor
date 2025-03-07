@@ -10,6 +10,9 @@
     <!-- Title -->
     <title>Admin Dashboard | TARPOR</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('/logos/favicon.ico') }}" type="image/png">
+
     <!-- Include Tailwind CSS -->
     @vite(['resources/css/app.css'])
     @vite(['resources/js/app.js'])
@@ -18,15 +21,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     @stack('styles')
 </head>
-<body class="bg-gray-100" x-data="{ isSidebarCollapsed: false, openNotifications: false, openProfileDropdown: false, openSubmenu: null }">
+
+<body class="bg-gray-100 overflow-x-auto" x-data="{ isSidebarCollapsed: false, openNotifications: false, openProfileDropdown: false, openSubmenu: null }">
 <!-- Top Bar -->
 <div class="fixed top-0 left-0 right-0 bg-gray-950 shadow-md z-50 h-16">
         <div class="w-full mx-auto md:mx-2">
             <div class="flex items-center justify-between md:px-2 h-16 relative">
                 <!-- Logo (Left) -->
-                <div class="flex-shrink-0">
-                    <img src="{{ asset('logos/logo.svg') }}" alt="Logo" class="h-auto lg:h-8 w-32 md:w-auto">
-                </div>
+                <a href="{{ route('home') }}">
+                    <div class="flex-shrink-0">
+                        <img src="{{ asset('logos/logo.svg') }}" alt="Logo" class="h-auto lg:h-8 w-32 md:w-auto">
+                    </div>
+                </a>
 
                 <!-- Search Bar (Middle) - Always centered on larger screens -->
                 <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-full max-w-2xl">
@@ -178,7 +184,7 @@
     </div>
 
 <!-- Main Content -->
-<div class="flex flex-col w-full mx-auto md:flex-row min-h-full pt-16 over">
+<div class="flex flex-col w-full mx-auto md:flex-row min-h-full pt-10 over">
     <!-- Left Sidebar -->
     <div class="flex flex-col w-full mx-auto md:flex-row min-h-full" x-data="{ openSubmenu: null, isSidebarCollapsed: false }">
         <!-- Left Side Navigation Bar -->
@@ -188,9 +194,11 @@
     @yield('page-content')
     </div>
 </div>
+
+
 <!-- Footer -->
-<footer class="bg-gray-950 text-white w-full overflow-hidden">
-    <div class="mx-auto px-4 py-12">
+<footer class="flex flex-col w-full mx-auto bg-gray-950 text-white overflow-hidden">
+    <div class="w-full px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- About Section -->
             <div>
@@ -261,6 +269,7 @@
         </div>
     </div>
 </footer>
+
 
 
     @include('partials.toast')
