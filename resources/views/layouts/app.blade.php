@@ -12,6 +12,7 @@
     <!-- Common Styles -->
     @include('partials.meta')
     @include('partials.styles')
+    @stack('styles')
 
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical_url', url()->current())">
