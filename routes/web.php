@@ -108,6 +108,6 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
 Route::any('/{any}', function ($any) {
     Log::info('Empty request detected', ['path' => $any]);
 //    return response('Not Found', 404);
-    abort(500);
+    abort(404);
 })->where('any', '.*');
 

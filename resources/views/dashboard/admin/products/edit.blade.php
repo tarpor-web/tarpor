@@ -71,10 +71,15 @@
                     />
 
                     <!-- Images & Thumbnail -->
-{{--                    <x-form.file-upload name="images[]" label="Product Images" uploadLabel="Upload Product Images"  ManyImagesInput="true" multiple :existingImages="$existingImages"/>--}}
-{{--                    <x-form.file-upload name="thumbnail" label="Thumbnail Image" uploadLabel="Upload Thumbnail Images" isSingleImage="true" :existingImages="$thumbnail" />--}}
-
-                    <x-form.file-upload name="images[]" label="Product Images" uploadLabel="Upload Product Images" ManyImagesInput="true" multiple :existingImages="$existingImages"/>
+                    <x-form.file-upload
+                        name="images[]"
+                        label="Product Images"
+                        uploadLabel="Upload Product Images"
+                        ManyImagesInput="true"
+                        multiple
+                        :existingImages="$existingImages"
+                        description="(Please remove your previous product image before uploading new image or images)"
+                    />
                     <x-form.file-upload name="thumbnail" label="Thumbnail Image" uploadLabel="Upload Thumbnail Images" isSingleImage="true" :existingImages="$thumbnail" />
 
                     <!-- SEO Section -->

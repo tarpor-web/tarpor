@@ -16,7 +16,7 @@
 
         <!-- Logo -->
         <div class="w-1/3 lg:w-3/12 pt-2 md:pt-0 flex justify-start">
-            <a href="https://www.tarpor.com" aria-label="Home">
+            <a href="{{ route('home') }}" aria-label="Home">
                 <img src="{{ asset('/logos/logo.svg') }}" loading="lazy" alt="TARPOR" class="w-auto h-10">
             </a>
         </div>

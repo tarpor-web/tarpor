@@ -13,26 +13,13 @@
     <div class="w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
 
         <!-- Second Toggle Button on Right Side -->
-        <div class="flex items-center justify-between mb-6">
-            <div class="flex justify-between items-center">
-                <button @click="isSidebarCollapsed = !isSidebarCollapsed"
-                        class="p-2 rounded-lg hover:bg-teal-100 mr-1 md:mr-4"
-                        :class="{ 'hidden': !isSidebarCollapsed }">
-                    <x-sidebar.sidebar-toogle-right-icon />
-                </button>
-                <!-- Title on the Left -->
-                <h1 class="text-lg lg:text-3xl font-bold text-gray-800">Admin Dashboard</h1>
-            </div>
-
-            <!-- Breadcrumb on the Right -->
-            <div class="text-xs lg:text-sm text-gray-500 flex items-center">
-                <a href="{{ route('admin.dashboard') }}" class="text-sm text-gray-700 hover:text-blue-600">Dashboard</a>
-                <svg class="w-3 h-3 mx-1 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                </svg>
-                <a href="{{ route('admin.dashboard') }}" class="text-gray-700">Dashboard</a>
-            </div>
-        </div>
+        @include('components.breadcrumbs', [
+             'links' => [
+                 'Dashboard' => route('admin.dashboard'),
+                 'Products' => route('product.index'),
+             ],
+              'title' => "Admin Dashboard"
+         ])
 
         <!-- Stats Cards -->
         <div class="max-w-full mx-auto bg-gray-100 md:p-8 rounded-lg shadow-lg">

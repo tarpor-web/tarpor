@@ -5,7 +5,8 @@
     'existingImages' => [],
     'uploadLabel' => 'Click to upload',
     'ManyImagesInput' => false,
-    'isSingleImage' => false
+    'isSingleImage' => false,
+    'description' => null,
 ])
 
 <div class="col-span-1 lg:col-span-2" x-data="{
@@ -16,6 +17,11 @@
 }">
     <!-- Larger and Bold Label -->
     <label for="{{ $name }}" class="block text-base font-bold text-gray-700 mt-4 mb-2">{{ $label }}</label>
+
+    <!-- Description (if provided) -->
+    @if($description)
+        <p class="text-sm text-orange-500 mb-2">{{ $description }}</p>
+    @endif
 
     <!-- Hidden File Input -->
     <input

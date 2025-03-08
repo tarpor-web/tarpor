@@ -22,177 +22,180 @@
     @stack('styles')
 </head>
 
-<body class="bg-gray-100 overflow-x-auto" x-data="{ isSidebarCollapsed: false, openNotifications: false, openProfileDropdown: false, openSubmenu: null }">
+<body class="bg-gray-100" x-data="{ isSidebarCollapsed: false, openNotifications: false, openProfileDropdown: false, openSubmenu: null }">
 <!-- Top Bar -->
 <div class="fixed top-0 left-0 right-0 bg-gray-950 shadow-md z-50 h-16">
-        <div class="w-full mx-auto md:mx-2">
-            <div class="flex items-center justify-between md:px-2 h-16 relative">
-                <!-- Logo (Left) -->
-                <a href="{{ route('home') }}">
-                    <div class="flex-shrink-0">
-                        <img src="{{ asset('logos/logo.svg') }}" alt="Logo" class="h-auto lg:h-8 w-32 md:w-auto">
-                    </div>
-                </a>
+    <div class="w-full mx-auto md:mx-2">
+        <div class="flex items-center justify-between md:px-2 h-16 relative">
+            <!-- Logo (Left) -->
+            <a href="{{ route('home') }}">
+                <div class="flex-shrink-0">
+                    <img src="{{ asset('logos/logo.svg') }}" alt="Logo" class="h-auto lg:h-8 w-32 md:w-auto">
+                </div>
+            </a>
 
-                <!-- Search Bar (Middle) - Always centered on larger screens -->
-                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-full max-w-2xl">
-                    <input
-                        type="text"
-                        placeholder="Search products, orders, customers..."
-                        class="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
-                    />
+            <!-- Search Bar (Middle) - Always centered on larger screens -->
+            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-full max-w-2xl">
+                <input
+                    type="text"
+                    placeholder="Search products, orders, customers..."
+                    class="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                />
+            </div>
+
+            <!-- Profile and Notifications (Right) -->
+            <div class="flex items-center space-x-2 lg:space-x-6">
+                <!-- Search Icon for Mobile -->
+                <div class="md:hidden" x-data="{ openSearch: false }">
+                    <button @click="openSearch = !openSearch" class="text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fas fa-search lg:text-lg"></i>
+                    </button>
+
+                    <!-- Mobile Search Bar -->
+                    <div x-show="openSearch" class="absolute top-full left-0 w-full bg-gray-900 p-2 shadow-md">
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            class="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                        />
+                    </div>
+                </div>
+                <!-- Notifications -->
+                <div class="relative">
+                    <!-- Notification Bell Icon with Badge -->
+                    <button
+                        @click="openNotifications = !openNotifications"
+                        class="relative text-gray-400 hover:text-white focus:outline-none transition-colors duration-200"
+                    >
+                        <!-- Bell Icon -->
+                        <i class="fas fa-bell lg:text-xl"></i>
+                        <!-- Notification Count Badge -->
+                        <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1 lg:px-2 py-1 transform translate-x-1/2 -translate-y-1/2">
+                            3
+                        </span>
+                    </button>
+
+                    <!-- Notifications Dropdown -->
+                    <div
+                        x-show="openNotifications"
+                        @click.away="openNotifications = false"
+                        class="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg z-50 overflow-hidden transform origin-top-right transition-transform duration-200"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95"
+                    >
+                        <!-- Dropdown Header -->
+                        <div class="p-4 border-b border-gray-200 bg-gray-50">
+                            <h3 class="text-lg font-semibold text-gray-800">Notifications</h3>
+                        </div>
+
+                        <!-- Dropdown List -->
+                        <ul class="divide-y divide-gray-200">
+                            <!-- Notification Item 1 -->
+                            <li class="px-4 py-3 hover:bg-gray-300 transition-colors duration-200">
+                                <a href="#" class="flex items-center space-x-3">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-shopping-cart text-blue-500"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-gray-900">New order received</p>
+                                        <p class="text-xs text-gray-500">2 minutes ago</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <!-- Notification Item 2 -->
+                            <li class="px-4 py-3 hover:bg-gray-300 transition-colors duration-200">
+                                <a href="#" class="flex items-center space-x-3">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-gray-900">Product out of stock</p>
+                                        <p class="text-xs text-gray-500">10 minutes ago</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <!-- Notification Item 3 -->
+                            <li class="px-4 py-3 hover:bg-gray-300 transition-colors duration-200">
+                                <a href="#" class="flex items-center space-x-3">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-user-plus text-green-500"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-gray-900">New customer registered</p>
+                                        <p class="text-xs text-gray-500">1 hour ago</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Dropdown Footer -->
+                        <div class="p-4 border-t border-gray-200 bg-gray-50">
+                            <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-500">View all notifications</a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Profile and Notifications (Right) -->
-                <div class="flex items-center space-x-2 lg:space-x-6">
-                    <!-- Search Icon for Mobile -->
-                    <div class="md:hidden" x-data="{ openSearch: false }">
-                        <button @click="openSearch = !openSearch" class="text-gray-400 hover:text-white focus:outline-none">
-                            <i class="fas fa-search lg:text-lg"></i>
-                        </button>
-
-                        <!-- Mobile Search Bar -->
-                        <div x-show="openSearch" class="absolute top-full left-0 w-full bg-gray-900 p-2 shadow-md">
-                            <input
-                                type="text"
-                                placeholder="Search..."
-                                class="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
-                            />
-                        </div>
+                <!-- Profile Dropdown -->
+                <div class="relative">
+                    <button @click="openProfileDropdown = !openProfileDropdown" class="flex items-center text-gray-400 hover:text-white focus:outline-none">
+                        <img src="{{ asset('logos/tblue.svg') }}" alt="Profile" class="h-8 w-8 rounded-full">
+                        <i class="fas fa-chevron-down lg:ml-1 text-xs"></i>
+                    </button>
+                    <!-- Profile Dropdown Menu -->
+                    <div x-show="openProfileDropdown" @click.away="openProfileDropdown = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50 overflow-hidden">
+                        <ul class="py-2">
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-300 transition-colors duration-200">
+                                    <i class="fas fa-user-circle mr-2"></i> Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-300 transition-colors duration-200">
+                                    <i class="fas fa-cog mr-2"></i> Settings
+                                </a>
+                            </li>
+                            <li class="border-t border-gray-200">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-300 transition-colors duration-200">
+                                        <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- Notifications -->
-                    <div class="relative">
-                        <!-- Notification Bell Icon with Badge -->
-                        <button
-                            @click="openNotifications = !openNotifications"
-                            class="relative text-gray-400 hover:text-white focus:outline-none transition-colors duration-200"
-                        >
-                            <!-- Bell Icon -->
-                            <i class="fas fa-bell lg:text-xl"></i>
-                            <!-- Notification Count Badge -->
-                            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1 lg:px-2 py-1 transform translate-x-1/2 -translate-y-1/2">
-                                3
-                            </span>
-                        </button>
+                </div>
 
-                        <!-- Notifications Dropdown -->
-                        <div
-                            x-show="openNotifications"
-                            @click.away="openNotifications = false"
-                            class="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg z-50 overflow-hidden transform origin-top-right transition-transform duration-200"
-                            x-transition:enter="transition ease-out duration-200"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100"
-                            x-transition:leave="transition ease-in duration-150"
-                            x-transition:leave-start="opacity-100 scale-100"
-                            x-transition:leave-end="opacity-0 scale-95"
-                        >
-                            <!-- Dropdown Header -->
-                            <div class="p-4 border-b border-gray-200 bg-gray-50">
-                                <h3 class="text-lg font-semibold text-gray-800">Notifications</h3>
-                            </div>
-
-                            <!-- Dropdown List -->
-                            <ul class="divide-y divide-gray-200">
-                                <!-- Notification Item 1 -->
-                                <li class="px-4 py-3 hover:bg-gray-300 transition-colors duration-200">
-                                    <a href="#" class="flex items-center space-x-3">
-                                        <div class="flex-shrink-0">
-                                            <i class="fas fa-shopping-cart text-blue-500"></i>
-                                        </div>
-                                        <div class="flex-1">
-                                            <p class="text-sm font-medium text-gray-900">New order received</p>
-                                            <p class="text-xs text-gray-500">2 minutes ago</p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <!-- Notification Item 2 -->
-                                <li class="px-4 py-3 hover:bg-gray-300 transition-colors duration-200">
-                                    <a href="#" class="flex items-center space-x-3">
-                                        <div class="flex-shrink-0">
-                                            <i class="fas fa-exclamation-triangle text-yellow-500"></i>
-                                        </div>
-                                        <div class="flex-1">
-                                            <p class="text-sm font-medium text-gray-900">Product out of stock</p>
-                                            <p class="text-xs text-gray-500">10 minutes ago</p>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <!-- Notification Item 3 -->
-                                <li class="px-4 py-3 hover:bg-gray-300 transition-colors duration-200">
-                                    <a href="#" class="flex items-center space-x-3">
-                                        <div class="flex-shrink-0">
-                                            <i class="fas fa-user-plus text-green-500"></i>
-                                        </div>
-                                        <div class="flex-1">
-                                            <p class="text-sm font-medium text-gray-900">New customer registered</p>
-                                            <p class="text-xs text-gray-500">1 hour ago</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <!-- Dropdown Footer -->
-                            <div class="p-4 border-t border-gray-200 bg-gray-50">
-                                <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-500">View all notifications</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Profile Dropdown -->
-                    <div class="relative">
-                        <button @click="openProfileDropdown = !openProfileDropdown" class="flex items-center text-gray-400 hover:text-white focus:outline-none">
-                            <img src="{{ asset('logos/tblue.svg') }}" alt="Profile" class="h-8 w-8 rounded-full">
-                            <i class="fas fa-chevron-down lg:ml-1 text-xs"></i>
-                        </button>
-                        <!-- Profile Dropdown Menu -->
-                        <div x-show="openProfileDropdown" @click.away="openProfileDropdown = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50 overflow-hidden">
-                            <ul class="py-2">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-300 transition-colors duration-200">
-                                        <i class="fas fa-user-circle mr-2"></i> Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-300 transition-colors duration-200">
-                                        <i class="fas fa-cog mr-2"></i> Settings
-                                    </a>
-                                </li>
-                                <li class="border-t border-gray-200">
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-300 transition-colors duration-200">
-                                            <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                                        </button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Floating Hamburger Menu for Mobile -->
-                    <div class="md:hidden">
-                        <button @click="isSidebarCollapsed = !isSidebarCollapsed" class="text-gray-400 hover:text-white focus:outline-none">
-                            <i class="fas fa-bars text-lg"></i>
-                        </button>
-                    </div>
+                <!-- Floating Hamburger Menu for Mobile -->
+                <div class="md:hidden">
+                    <button @click="isSidebarCollapsed = !isSidebarCollapsed" class="text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 <!-- Main Content -->
-<div class="flex flex-col w-full mx-auto md:flex-row min-h-full pt-10 over">
+<div class="flex w-full mx-auto md:flex-row min-h-full pt-16 over" x-data="{ isSidebarCollapsed: false }">
     <!-- Left Sidebar -->
-    <div class="flex flex-col w-full mx-auto md:flex-row min-h-full" x-data="{ openSubmenu: null, isSidebarCollapsed: false }">
+{{--    <aside class="w-64 bg-gray-900 text-white min-h-screen" :class="{ 'w-20': isSidebarCollapsed }" x-data="{ openSubmenu: null, isSidebarCollapsed: false }">--}}
+    <aside class="w-auto bg-gray-900 text-white min-h-screen">
         <!-- Left Side Navigation Bar -->
         @include('partials.sidebars.admin-sidebar')
-
+    </aside>
     <!-- Right Side Content -->
-    @yield('page-content')
-    </div>
+    <!-- ✅ MAIN CONTENT (Takes remaining space) -->
+    <main class="flex-1 bg-white p-2">
+        @yield('page-content')
+    </main>
 </div>
 
 

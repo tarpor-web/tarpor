@@ -3,31 +3,14 @@
 @section('page-content')
     <div class="max-w-full h-full bg-sky-100 p-4 md:p-8 transition-all duration-300">
         <!-- Breadcrumbs -->
-        <div class="flex justify-between items-center mb-6">
-            <div class="flex justify-between items-center">
-                <button @click="isSidebarCollapsed = !isSidebarCollapsed"
-                        class="p-2 rounded-lg hover:bg-teal-100 mr-1 md:mr-4"
-                        :class="{ 'hidden': !isSidebarCollapsed }">
-                    <x-sidebar.sidebar-toogle-right-icon />
-                </button>
-                <h2 class="text-2xl font-semibold text-gray-800">Product List</h2>
-            </div>
-            <nav class="flex" aria-label="Breadcrumb">
-                <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                    <li class="inline-flex items-center">
-                        <a href="{{ route('admin.dashboard') }}" class="text-sm text-gray-700 hover:text-blue-600">Dashboard</a>
-                    </li>
-                    <li aria-current="page">
-                        <div class="flex items-center">
-                            <svg class="w-3 h-3 mx-1 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                            </svg>
-                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Products</span>
-                        </div>
-                    </li>
-                </ol>
-            </nav>
-        </div>
+        @include('components.breadcrumbs', [
+             'links' => [
+                 'Dashboard' => route('admin.dashboard'),
+                 'Products' => route('product.index'),
+                 'Create Product' => route('product.create'),
+             ],
+              'title' => "Admin Dashboard"
+         ])
 
         <!-- Product Table -->
         <div class="w-full bg-white shadow-lg rounded-lg overflow-hidden">

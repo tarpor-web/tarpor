@@ -24,12 +24,10 @@ class ProductController extends Controller
 
     public function create()
     {
+        $brands = Brand::all();
         $categories = Category::whereNull('parent_id')->with('children')->get();
 
-        return view('dashboard.admin.products.product-new', [
-            'brands' => Brand::all(),
-            'categories' => $categories,
-        ]);
+        return view('dashboard.admin.products.product-new', compact('brands', 'categories'));
     }
 
     public function checkSlug(Request $request)
@@ -263,10 +261,9 @@ class ProductController extends Controller
 
         // Convert image paths to full URLs (if stored as relative paths)
         $existingImages = array_map(static function ($image) {
-            $normalizedImage = str_replace('_', ' ', $image);
+            $normalizedImage = str_replace(' ', '-', $image);
             return asset($normalizedImage);
         }, $existingImages);
-
 
         // Get the thumbnail URL (if it exists)
         $thumbnail = $product->thumbnail ? asset($product->thumbnail) : null;
