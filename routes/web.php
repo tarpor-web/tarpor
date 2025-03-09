@@ -5,12 +5,14 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SocialLoginController;
+use App\Http\Controllers\SvgController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
 
 
 // Guest Dashboard (If truly for unauthenticated users)
@@ -100,6 +102,12 @@ Route::middleware(['auth', 'verified', 'auto.logout'])->group(function () {
         Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('edit');
         Route::put('{category}', [CategoryController::class, 'update'])->name('update');
         Route::delete('{category}', [CategoryController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('icons')->name('icons.')->group(function () {
+        Route::get('/', [SvgController::class, 'index']);
+        Route::post('/cleanup', [SvgController::class, 'cleanup'])->name('cleanup');
+        Route::post('/sort', [SvgController::class, 'sortSvgSymbols'])->name('sort');
     });
 
 });

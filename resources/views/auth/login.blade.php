@@ -3,7 +3,15 @@
 @section('title', 'Login - TARPOR | Secure User Authentication')
 @section('meta_title', 'Login - TARPOR | Secure User Authentication')
 @section('description', 'Access your TARPOR account securely. Log in with your credentials to explore our features.')
-
+@push('styles')
+    <style>
+        /* Hide the default password toggle icon in Edge and other browsers */
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-webkit-reveal {
+            display: none;
+        }
+    </style>
+@endpush
 @section('content')
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full bg-gray-800/80 backdrop-blur-lg border border-gray-700 p-10 rounded-2xl shadow-2xl transition-all hover:-translate-y-1">
@@ -72,9 +80,13 @@
                                 class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 placeholder-gray-400 text-gray-100 transition-all duration-200"
                                 placeholder="Enter Your Password"
                             >
-                            <span id="toggle-password" class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
-                                <i class="fa-solid fa-eye-slash text-gray-200"></i>
-                            </span>
+                            <button
+                                id="toggle-password"
+                                type="button"
+                                class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-gray-950 hover:text-purple-300 transition-colors duration-200"
+                            >
+                                <x-icon name="icon-eye" class="h-7 w-7" />
+                            </button>
                         </div>
                         @error('password')
                         <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
@@ -163,22 +175,45 @@
         </div>
     </div>
 
-
 @endsection
 
 @push('footer-scripts')
     <!-- Password Toggle Script -->
     <script>
-        document.getElementById('toggle-password').addEventListener('click', function() {
-            const passwordInput = document.getElementById('password');
-            const icon = this.querySelector('i');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                icon.classList.replace('fa-eye-slash', 'fa-eye');
-            } else {
-                passwordInput.type = 'password';
-                icon.classList.replace('fa-eye', 'fa-eye-slash');
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            const passwordInput = document.getElementById("password");
+            const toggleButton = document.getElementById("toggle-password");
+
+            // Initially hide the eye icon
+            toggleButton.style.display = "none";
+
+            // Show the eye icon when typing in the password field
+            passwordInput.addEventListener("input", function () {
+                if (passwordInput.value.length > 0) {
+                    toggleButton.style.display = "flex";
+                } else {
+                    toggleButton.style.display = "none";
+                }
+            });
+
+            // Toggle password visibility on click
+            toggleButton.addEventListener("click", function () {
+                const toggleIcon = toggleButton.querySelector("svg");
+
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    toggleIcon.innerHTML = `<x-icon name="icon-eye-slash" />`; // Change to hide icon
+
+                    // Automatically revert to hidden after 3 seconds
+                    setTimeout(() => {
+                        passwordInput.type = "password";
+                        toggleIcon.innerHTML = `<x-icon name="icon-eye" />`; // Change back to show icon
+                    }, 3000);
+                } else {
+                    passwordInput.type = "password";
+                    toggleIcon.innerHTML = `<x-icon name="icon-eye" />`; // Show eye icon
+                }
+            });
         });
     </script>
 @endpush
