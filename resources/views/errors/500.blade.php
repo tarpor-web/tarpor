@@ -89,7 +89,7 @@
     </style>
 @endpush
 
-@section('title', '500 - Internal Server Error')
+@section('title', '500 - Internal Server Error | ' . strtoupper(config('app.name')))
 
 @section('content')
     <div class="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden">

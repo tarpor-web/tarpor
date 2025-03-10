@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', '503 - Service Unavailable  | ' . strtoupper(config('app.name')))
+
 @push('styles')
     <style>
         /* Tailwind Custom Class for Particle Canvas */
@@ -35,8 +37,6 @@
         }
     </style>
 @endpush
-
-@section('title', '503 - Service Unavailable')
 
 @section('content')
     <div class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">

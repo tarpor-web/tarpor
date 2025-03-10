@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', '429 - Too Many Requests | ' . strtoupper(config('app.name')))
+
 @push('styles')
     <style>
         /* Floating animation */
@@ -82,7 +84,6 @@
     </style>
 @endpush
 
-@section('title', '429 - Too Many Requests')
 
 @section('content')
     <div class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">

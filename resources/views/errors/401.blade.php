@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', '401 - Unauthorized | ' . strtoupper(config('app.name')))
 
 @push('styles')
     <style>
@@ -81,8 +82,6 @@
         }
     </style>
 @endpush
-
-@section('title', '401 - Unauthorized')
 
 @section('content')
     <div class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
